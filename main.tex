@@ -84,24 +84,25 @@
 
 \lstset{
 	frame=tb,
-	aboveskip=2mm,
-	belowskip=2mm,
+	aboveskip=3mm,
+	belowskip=3mm,
 	showstringspaces=false,
 	columns=flexible,
 	framerule=1pt,
 	rulecolor=\color{gray!35},
 	backgroundcolor=\color{gray!5},
-	basicstyle={\footnotesize\ttfamily\baselineskip=0.9\baselineskip},
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
 	keywordstyle=\color{blue},
 	commentstyle=\color{dkgreen},
 	stringstyle=\color{mauve},
 	breaklines=true,
 	breakatwhitespace=true,
 	tabsize=4,
-	numbers=left,
-	numberstyle=\scriptsize,
-	stepnumber=1,
-	lineskip=-1pt,
+	numbers=left,          % 显示行号
+	numberstyle=\small,     % 行号样式
+	stepnumber=1,          % 每行显示行号
 }
 
 
@@ -120,8 +121,8 @@
 \setcounter{secnumdepth}{4}
 
 % 标题、作者、日期
-\title{离散数学期末复习参考-更新中}
-\author{钟睿洁}
+\title{离散数学期末复习参考}
+\author{计算机2501 姜振坤}
 \date{\today}
 
 
@@ -129,6 +130,9 @@
 
 \input{chapter/index.tex}
 %封面设置
+
+%\input{chapter/items.tex}
+%\newpage
 
 \input{chapter/problem.tex}
 

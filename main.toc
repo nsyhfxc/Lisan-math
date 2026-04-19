@@ -1,5 +1,4 @@
-\contentsline {section}{\numberline {1}空间向量与解析几何}{1}{section.1}%
-\contentsline {section}{\numberline {2}多元函数微分学}{2}{section.2}%
-\contentsline {section}{\numberline {3}多元函数积分学}{4}{section.3}%
-\contentsline {section}{\numberline {4}无穷级数}{7}{section.4}%
-\contentsline {section}{\numberline {5}常微分方程}{9}{section.5}%
+\contentsline {section}{\numberline {1}课后测验题目}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}第一章测试}{1}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}单选题}{1}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}填空题}{1}{subsubsection.1.1.2}%
