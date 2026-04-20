@@ -2,5 +2,158 @@
 
 \subsection{第一章测试题解}
 
+\subsubsection{单选题}
 
-\subsection{第二章测试题解}
+\begin{enumerate}
+	\item \textbf{解：}
+	
+	对于集合 $P$：\\
+	由 $(x+1)^2 \le 4$，两边开平方得：
+	\[ -2 \le x+1 \le 2 \]
+	解得：
+	\[ -3 \le x \le 1 \]
+	所以，集合 $P = [-3, 1]$。
+	
+	对于集合 $Q$：\\
+	由 $5 \le x^2 + 16$，移项化简得：
+	\[ x^2 + 11 \ge 0 \]
+	由于 $x \in \mathbb{R}$，实数平方非负（$x^2 \ge 0$），故 $x^2 + 11 \ge 11 > 0$ 恒成立。\\
+	所以，集合 $Q = \mathbb{R}$。
+	
+	对比两集合的范围：\\
+	因为 $P = [-3, 1]$ 且 $Q = \mathbb{R}$，显然集合 $P$ 中的所有元素均属于集合 $Q$，且 $Q$ 中存在不属于 $P$ 的元素。即 $P$ 是 $Q$ 的真子集：
+	\[ P \subset Q \]
+	
+	故选 D。
+	
+	\item \textbf{解：}
+	
+	已知集合 $A = \{a, \{a\}\}$，该集合包含两个元素：$a$ 和 $\{a\}$。\\
+	幂集 $P(A)$ 是由集合 $A$ 的所有子集构成的集合。因为 $A$ 含有 2 个元素，所以 $P(A)$ 共有 $2^2 = 4$ 个元素，具体枚举如下：
+	\[ P(A) = \{\emptyset, \{a\}, \{\{a\}\}, \{a, \{a\}\}\} \]
+	
+	逐项分析：\\
+	\textbf{A 选项}：$\{a\}$ 是 $P(A)$ 中的一个元素，故 $\{a\} \in P(A)$ 命题正确。\\
+	\textbf{B 选项}：$\{\{a\}\}$ 是 $P(A)$ 中的一个元素，故 $\{\{a\}\} \in P(A)$ 命题正确。\\
+	\textbf{C 选项}：若 $\{a\} \subseteq P(A)$ 成立，根据子集的定义，必有 $a \in P(A)$。但观察幂集 $P(A)$ 的元素可知，$a$ 并非 $P(A)$ 的元素（即 $a \notin P(A)$），故该命题错误。\\
+	\textbf{D 选项}：若 $\{\{a\}\} \subseteq P(A)$ 成立，则必有 $\{a\} \in P(A)$。根据 A 选项的结论，这显然成立，故该命题正确。
+	
+	题目要求选出错误的命题，因此正确答案是 \textbf{C}。
+	
+	\item \textbf{解：}
+	
+	已知 $0$ 是一个元素，而 $\emptyset$ 表示空集。\\
+	描述元素与集合的关系用属于（$\in$）或不属于（$\notin$）。由于空集中不包含任何元素，故 $0$ 不属于空集，即：
+	\[ 0 \notin \emptyset \]正确符号为 $\notin$\\
+	故选 \textbf{D}。
+	
+	\item \textbf{解:}\\
+	已知 $A - B = \emptyset$（原题中 $\Phi$ 视为空集）。\\
+	差集 $A - B$ 表示属于 $A$ 且不属于 $B$ 的元素集合。$A - B = \emptyset$ 意味着 $A$ 中不存在任何不属于 $B$ 的元素，即 $A$ 的所有元素均属于 $B$，推导出 $A \subseteq B$。
+	逐项分析：\\
+		\textbf{A 选项}：$A \subset B$ 是可能的（如 $A=\{1\}, B=\{1, 2\}$）。\\
+		\textbf{B 选项}：$A = \emptyset$ 是可能的（此时必定有 $A-B=\emptyset$）。\\
+		\textbf{C 选项}：$B \subset A$ 表示 $B$ 是 $A$ 的真子集，这意味着 $A$ 中存在不属于 $B$ 的元素，此时必然有 $A - B \neq \emptyset$，与已知矛盾，故\textbf{不可能正确}。\\
+		\textbf{D 选项}：$B = \emptyset$ 是可能的（当 $A=\emptyset$ 时成立）。\\
+
+	故选 \textbf{C}。
+	
+	\item \textbf{解:}\\
+	逐项分析命题的真假：\\
+		\textbf{A 选项}：空集是任何集合的子集，包括空集自身（$\emptyset \subseteq \emptyset$），所以不仅仅是非空集合的子集。命题错误。\\
+		\textbf{B 选项}：仅凭 $A$ 的一个元素属于 $B$ 无法推断两集合相等（如 $A=\{1, 2\}, B=\{1, 3\}$）。命题错误。\\
+		\textbf{C 选项}：若 $A \neq B$，则必存在元素只属于其中一个集合。例如存在 $x \in A$ 且 $x \notin B$，则 $x \in A-B$ 且 $x \notin B-A$，导致 $A-B \neq B-A$。故若要 $A-B = B-A$ 成立，必须没有任何元素单独属于某一个集合，即 $A = B$。命题正确。\\
+		\textbf{D选项}：空集是任何\textbf{非空}集合的真子集。空集不是自身的真子集（$\emptyset \not\subset \emptyset$）。命题错误。\\
+	故选 \textbf{C}。
+	
+	\item \textbf{解：}\\
+	题目要求寻找代数系统 $\langle \{a, b, c\}, * \rangle$ 的零元。\\
+	\textbf{零元的定义是：}对于集合中的任意元素 $x$，均满足 $x * z = z * x = z$，则称 $z$ 为零元。\\
+	观察运算表：\\
+	对于元素 $c$，有 $a * c = c$，$b * c = c$，$c * c = c$（即第 $c$ 列全为 $c$）；\\
+	且 $c * a = c$，$c * b = c$，$c * c = c$（即第 $c$ 行全为 $c$）。\\
+	这说明对于任意 $x \in \{a, b, c\}$，都有 $x * c = c * x = c$ 成立。\\
+	因此，$c$ 是该代数系统的零元。\\
+	故选 \textbf{D}。
+	
+	\item \textbf{第 7 题：}\\
+	已知函数 $f: \mathbb{N} \to \mathbb{N}$，定义为 $f(x) = x \bmod 3$。\\
+	判断单射性：\\
+	取 $x_1 = 0, x_2 = 3$（$0, 3 \in \mathbb{N}$），计算得 $f(0) = 0 \bmod 3 = 0$，$f(3) = 3 \bmod 3 = 0$。\\
+	因为 $f(0) = f(3)$ 但 $0 \neq 3$，所以 $f$ \textbf{不是单射}。\\
+	判断满射性：\\
+	任意自然数除以 $3$ 的余数只能是 $0, 1, 2$。因此函数 $f$ 的值域为 $\{0, 1, 2\}$。\\
+	由于值域 $\{0, 1, 2\}$ 严格包含于陪域 $\mathbb{N}$（例如 $3 \in \mathbb{N}$，但不存在 $x \in \mathbb{N}$ 使 $x \bmod 3 = 3$），所以 $f$ \textbf{不是满射}。\\
+	综上，$f$ 既不是单射也不是满射。\\
+	故选 \textbf{D}。
+	
+	\item \textbf{解:}\\
+	题目要求选出是单射而非满射的函数。逐项分析如下：\\
+	\textbf{A 选项}：$f: \mathbb{R} \to \mathbb{R}, f(x) = 2x + 1$。由 $2x_1+1 = 2x_2+1 \Rightarrow x_1=x_2$ 知其为单射；对任意 $y \in \mathbb{R}$，存在 $x = (y-1)/2 \in \mathbb{R}$ 使 $f(x)=y$，知其为满射。该函数是双射，不符合题意。\\
+	\textbf{B 选项}：$f: \mathbb{R} \to \mathbb{Z}, f(x) = \lfloor x \rfloor$。由于 $f(1.1) = 1$ 且 $f(1.2) = 1$，不同自变量对应相同函数值，故不是单射。不符合题意。\\
+	\textbf{C 选项}：$f: \mathbb{R} \to \mathbb{R}, f(x) = -x^2 + 2x - 1 = -(x-1)^2$。由于 $f(0) = -1$ 且 $f(2) = -1$，故不是单射。不符合题意。\\
+	\textbf{D 选项}：$f: \mathbb{Z}^+ \to \mathbb{R}, f(x) = \ln x$。因为对数函数在定义域上严格单调递增，故 $x_1 \neq x_2$ 时必有 $\ln x_1 \neq \ln x_2$，它是单射；而函数的值域为 $\{0, \ln 2, \ln 3, \dots\}$，这显然只是实数集 $\mathbb{R}$ 的一个真子集（例如实数 $0.5$ 就不在值域内，因为解得 $x = e^{0.5} \notin \mathbb{Z}^+$），故不是满射。符合题意。\\
+	故选 \textbf{D}。
+\end{enumerate}
+
+\subsubsection{填空题}
+
+\begin{enumerate}
+	\item \textbf{解：}
+	
+	若 $S = \{S_1, S_2, \cdots, S_m\}$ 是集合 $A$ 的一个分划（划分），则它必须同时满足以下三个条件：\\
+	(1) 划分中的所有子集非空：$S_i \neq \emptyset$ （对于 $1 \le i \le m$）；\\
+	(2) 划分中的任意两个不同子集互不相交：当 $i \neq j$ 时，$S_i \cap S_j = \emptyset$；\\
+	(3) 所有子集的并集等于原集合：$\bigcup_{i=1}^m S_i = A$。
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	求并集 $A \cup B$：将两集合中所有的有序对合并，并去除重复项，得到：\\
+	$A \cup B = \{\langle 1,2 \rangle, \langle 2,4 \rangle, \langle 3,3 \rangle, \langle 1,3 \rangle, \langle 4,2 \rangle\}$。\\
+	求复合关系 $A \circ B$：根据关系复合的左复合规则，若存在 $y$ 使得 $\langle x,y \rangle \in A$ 且 $\langle y,z \rangle \in B$，则 $\langle x,z \rangle \in A \circ B$。\\
+	因为 $\langle 1,2 \rangle \in A$ 且 $\langle 2,4 \rangle \in B$，得 $\langle 1,4 \rangle \in A \circ B$；\\
+	因为 $\langle 2,4 \rangle \in A$ 且 $\langle 4,2 \rangle \in B$，得 $\langle 2,2 \rangle \in A \circ B$；\\
+	有序对 $\langle 3,3 \rangle \in A$ 的第二元为 3，而集合 $B$ 中没有以 3 为第一元的有序对，故无对应。\\
+	所以 $A \circ B = \{\langle 1,4 \rangle, \langle 2,2 \rangle\}$。
+	
+	\vspace{1em}
+	
+	\item \textbf{解：}\\
+	对于任意有限集合 $S$，其幂集 $P(S)$ 的基数公式为 $|P(S)| = 2^{|S|}$。\\
+	已知 $|S| = 5$，则 $|P(S)| = 2^5 = 32$。
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	观察文氏图，阴影部分严格位于集合 $C$ 的内部。同时，它完全排除了与 $A$ 产生交集的区域，也完全排除了与 $B$ 产生交集的区域。这意味着该区域包含了所有属于 $C$ 但既不属于 $A$ 也不属于 $B$ 的元素。\\
+	其集合表达式可写作：$C - (A \cup B)$。
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	题目中以 $\Phi$ 表示空集 $\emptyset$。逐一判断命题真假：\\
+	\textbf{(1)}：集合 $\{\Phi, \{\{\Phi\}\}\}$ 仅包含两个元素：$\Phi$ 和 $\{\{\Phi\}\}$。元素 $\{\Phi\}$ 并不在其中，故 \textbf{(1) 错误}。\\
+	\textbf{(2)}：判断 $\{\Phi\} \subset \{\Phi, \{\{\Phi\}\}\}$。左边集合的唯一元素是 $\Phi$，而 $\Phi$ 确实是右侧集合的元素，且右侧集合还有其他元素。满足真子集定义，故 \textbf{(2) 正确}。\\
+	\textbf{(3)}：集合 $\{\{\Phi\}\}$ 的唯一元素是 $\{\Phi\}$。因为 $\Phi \neq \{\Phi\}$，所以 $\Phi$ 不属于该集合，故 \textbf{(3) 错误}。\\
+	\textbf{(4)}：空集是任何集合的子集，故 $\Phi \subseteq \{\Phi\}$ 恒成立，故 \textbf{(4) 正确}。\\
+	\textbf{(5)}：右侧集合 $\{a,b, \{b\}, \{a\}\}$ 的元素依次是 $a$, $b$, $\{b\}$, $\{a\}$。并没有把 $\{a,b\}$ 作为一个整体集合元素列出，故 \textbf{(5) 错误}。\\
+	综上所述，正确的命题是 \textbf{(2)} 和 \textbf{(4)}。
+	
+\end{enumerate}
+
+%\subsection{第二章测试题解}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
