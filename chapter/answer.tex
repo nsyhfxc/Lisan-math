@@ -115,7 +115,7 @@
 	因为 $\langle 1,2 \rangle \in A$ 且 $\langle 2,4 \rangle \in B$，得 $\langle 1,4 \rangle \in A \circ B$；\\
 	因为 $\langle 2,4 \rangle \in A$ 且 $\langle 4,2 \rangle \in B$，得 $\langle 2,2 \rangle \in A \circ B$；\\
 	有序对 $\langle 3,3 \rangle \in A$ 的第二元为 3，而集合 $B$ 中没有以 3 为第一元的有序对，故无对应。\\
-	所以 $A \circ B = \{\langle 1,4 \rangle, \langle 2,2 \rangle\}$。
+	所以 $A \circ B = \{ \langle 1,4 \rangle, \langle 2,2 \rangle \}$。
 	
 	\vspace{1em}
 	
@@ -127,7 +127,7 @@
 	
 	\item \textbf{解:}\\
 	观察文氏图，阴影部分严格位于集合 $C$ 的内部。同时，它完全排除了与 $A$ 产生交集的区域，也完全排除了与 $B$ 产生交集的区域。这意味着该区域包含了所有属于 $C$ 但既不属于 $A$ 也不属于 $B$ 的元素。\\
-	其集合表达式可写作：$C - (A \cup B)$。
+	其集合表达式可写作：$(B \oplus C - A)$。
 	
 	\vspace{1em}
 	
@@ -140,9 +140,327 @@
 	\textbf{(5)}：右侧集合 $\{a,b, \{b\}, \{a\}\}$ 的元素依次是 $a$, $b$, $\{b\}$, $\{a\}$。并没有把 $\{a,b\}$ 作为一个整体集合元素列出，故 \textbf{(5) 错误}。\\
 	综上所述，正确的命题是 \textbf{(2)} 和 \textbf{(4)}。
 	
+	\vspace{1em}
+	
+	\item \textbf{解：}\\
+	逐个分析推理过程：\\
+	\textbf{(1)}：$A \subseteq B, B \subseteq C \Rightarrow A \subseteq C$。这是集合包含关系的传递性，显然成立，推理\textbf{正确}。\\
+	\textbf{(2)}：$A \subseteq B, B \subseteq C \Rightarrow A \in B$。集合的包含关系（$\subseteq$）不能推导出元素的从属关系（$\in$）。例如 $A=\{1\}, B=\{1,2\}, C=\{1,2,3\}$，满足前置条件，但 $\{1\} \notin B$，推理\textbf{错误}。\\
+	\textbf{(3)}：$A \in B, B \in C \Rightarrow A \in C$。元素的从属关系不具备传递性。例如 $A=1, B=\{1\}, C=\{\{1\}\}$，满足 $1 \in B$ 且 $B \in C$，但 $1 \notin C$，推理\textbf{错误}。\\
+	综上，正确的推理只有 \textbf{(1)}。
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	\textbf{寻找幺元（单位元）：}\\
+	幺元 $e$ 需要满足对任意元素 $x$，都有 $x * e = e * x = x$。\\
+	观察运算表，在第 $a$ 行中，$a * a = a, a * b = b, a * c = c, a * d = d$；在第 $a$ 列中，$a * a = a, b * a = b, c * a = c, d * a = d$。这说明元素 $a$ 与任何元素运算都等于该元素本身。\\
+	所以，该代数系统的\textbf{幺元是 $a$}。
+	
+	\textbf{寻找逆元：}\\
+	若元素 $x$ 有逆元 $y$，则需满足 $x * y = y * x = a$（因为幺元是 $a$）。\\
+	对于 $a$：因为 $a * a = a$，所以 $a$ 的逆元是 $a$。\\
+	对于 $b$：因为 $b * d = a$ 且 $d * b = a$，所以 $b$ 的逆元是 $d$。\\
+	对于 $c$：因为 $c * c = a$，所以 $c$ 的逆元是 $c$。\\
+	对于 $d$：因为 $d * b = a$ 且 $b * d = a$，所以 $d$ 的逆元是 $b$。\\
+	因此，\textbf{有逆元的元素为 $a, b, c, d$，它们的逆元分别为 $a, d, c, b$}。
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	分别化简各集合中的元素：\\
+	\textbf{(1)} $A_1 = \{a, b\}$\\
+	\textbf{(2)} $A_2 = \{b, a\}$。集合元素无序，故 $A_2 = \{a, b\}$\\
+	\textbf{(3)} $A_3 = \{a, b, a\}$。集合元素具有互异性，去除重复元素后 $A_3 = \{a, b\}$\\
+	\textbf{(4)} $A_4 = \{a, b, c\}$\\
+	\textbf{(5)} $A_5 = \{x \mid (x-a)(x-b)(x-c) = 0\}$。该方程的解为 $x=a, x=b, x=c$，故该集合的元素为 $a, b, c$，即 $A_5 = \{a, b, c\}$\\
+	\textbf{(6)} $A_6 = \{x \mid x^2-(a+b)x+ab = 0\}$。该一元二次方程可因式分解为 $(x-a)(x-b) = 0$，解为 $x=a, x=b$，故该集合的元素为 $a, b$，即 $A_6 = \{a, b\}$
+	
+	对比化简结果，相等的集合分为两组：\\
+	\textbf{第一组：} $A_1 = A_2 = A_3 = A_6$\\
+	\textbf{第二组：} $A_4 = A_5$
+	
+	\vspace{1em}
+	
+	\item \textbf{解：}\\
+	已知 $N$ 为自然数集（在离散数学中通常包含 $0$），则由 $x \in N$ 且 $x < 5$ 可得集合 $A = \{0, 1, 2, 3, 4\}$。\\
+	已知 $E^+$ 为正偶数集，由 $x \in E^+$ 且 $x < 7$ 可得集合 $B = \{2, 4, 6\}$。\\
+	求并集 $A \cup B$，即将两集合元素合并并去除重复项，得到：
+	\[ A \cup B = \{0, 1, 2, 3, 4, 6\} \]
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	逐一判断命题真假：\\
+	\textbf{(1)}：若 $A \cup B = A \cup C$，则 $B = C$。此命题\textbf{错误}。举个反例：设 $A=\{1\}, B=\{1\}, C=\emptyset$。此时 $A \cup B = \{1\}$ 且 $A \cup C = \{1\}$，满足前提条件，但显然 $B \neq C$。\\
+	\textbf{(2)}：$\{a, b\} = \{b, a\}$。集合中的元素具有无序性，无论元素列出的先后顺序如何，集合都相等。此命题\textbf{正确}。\\
+	\textbf{(3)}：$P(A \cap B) \neq P(A) \cap P(B)$。此命题\textbf{错误}。在集合论中，交集的幂集等于幂集的交集，即 $P(A \cap B) = P(A) \cap P(B)$ 是一个恒成立的定理。\\
+	\textbf{(4)}：若 $A$ 为非空集，则 $A \neq A \cup A$ 成立。此命题\textbf{错误}。根据集合运算的等幂律，对于任意集合 $A$（无论是否为空），都有 $A \cup A = A$ 恒成立。\\
+	综上所述，正确的命题只有 \textbf{(2)}。
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	\textbf{寻找幺元：}\\
+	幺元 $e$ 需要满足：对于集合 $S$ 中的任意元素 $x$，都有 $e * x = x * e = x$ 成立。\\
+	观察给定的运算表，在第 $\beta$ 行中，$\beta * \alpha = \alpha, \beta * \beta = \beta, \beta * \gamma = \gamma, \beta * \delta = \delta$（运算结果与列首元素完全一致）；在第 $\beta$ 列中，$\alpha * \beta = \alpha, \beta * \beta = \beta, \gamma * \beta = \gamma, \delta * \beta = \delta$（运算结果与行首元素完全一致）。\\
+	这说明元素 $\beta$ 与任何元素进行 $*$ 运算，结果都等于该元素本身。因此，该代数系统的\textbf{幺元是 $\beta$}。
+	
+	\textbf{寻找 $\alpha$ 的逆元：}\\
+	已知幺元为 $\beta$，若 $\alpha$ 的逆元为 $x$，则需要满足 $\alpha * x = x * \alpha = \beta$。\\
+	查表可知，在 $\alpha$ 所在的行中，$\alpha * \gamma = \beta$；在 $\alpha$ 所在的列中，$\gamma * \alpha = \beta$。\\
+	满足条件的元素是 $\gamma$，因此，\textbf{$\alpha$ 的逆元是 $\gamma$}。
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	题目要求计算复合函数 $f \circ g(x)$。\\
+	根据复合函数的定义，$f \circ g(x)$ 等价于将 $g(x)$ 的值作为函数 $f$ 的自变量，即 $f(g(x))$。\\
+	已知 $g(x) = 2x$，将其代入函数 $f$ 中：
+	\[ f(g(x)) = f(2x) \]
+	又因为对于任意 $x \in N$，都有 $f(x) = x + 1$，我们将自变量替换为 $2x$，得到：
+	\[ f(2x) = 2x + 1 \]
+	因此，$f \circ g(x) = 2x + 1$。
+\end{enumerate}
+\newpage
+
+\subsection{第二章测试题解}
+
+\subsubsection{选择题}
+
+\begin{enumerate}
+	\item \textbf{解:}
+	
+	观察给定的关系图，集合 $S=\{1, 2, 3\}$。图中的有向边代表关系 $R$ 中的元素。从图中可以看出，箭头构成了从 $1 \to 2$，$2 \to 3$，$3 \to 1$ 的有向环。因此，关系集合可以表示为：$R = \{(1,2), (2,3), (3,1)\}$。
+	
+	下面根据二元关系的性质对选项进行逐一分析：
+	
+	\textbf{A 选项}：自反性。自反性要求对于所有 $x \in S$，都有 $(x,x) \in R$。图中没有任何节点有指向自身的自环（即不存在 $(1,1), (2,2), (3,3)$），所以 $R$ 不具有自反性。此选项错误。
+	
+	\textbf{B 选项}：反自反性、反对称性、传递性。反自反性要求对于所有 $x \in S$，都有 $(x,x) \notin R$，由于图中无自环，所以 $R$ 具有反自反性。但 $R$ 不具有传递性，因为传递性要求若 $(x,y) \in R$ 且 $(y,z) \in R$，则必然 $(x,z) \in R$。在这里 $(1,2)\in R$ 且 $(2,3)\in R$，但是 $(1,3)\notin R$（图中只有 $3 \to 1$ 的箭头，无 $1 \to 3$ 的箭头）。此选项错误。
+	
+	\textbf{C 选项}：反自反性、反对称性。前面已证具有反自反性。反对称性要求如果 $(x,y) \in R$ 且 $(y,x) \in R$，则必然 $x=y$。也就是说，不同元素之间不能存在双向箭头。图中 $R$ 没有任何两个节点之间存在双向箭头，因此反对称性的条件前件始终为假，命题恒真，所以 $R$ 具有反对称性。此选项正确。
+	
+	\textbf{D 选项}：自反性、对称性、传递性。前面已证 $R$ 既不自反也不传递。同时 $R$ 也不对称（例如 $(1,2) \in R$ 但 $(2,1) \notin R$）。此选项错误。
+	
+	\textbf{正确答案：C}
+	%\hrule
+	\vspace{1em}
+	
+	\item \textbf{解:}
+	
+	题目问：设 $|A| = n$，则 $A$ 上有多少个二元关系。
+	
+	根据定义，集合 $A$ 上的二元关系 $R$ 是笛卡尔积 $A \times A$ 的任意一个子集。首先，计算笛卡尔积 $A \times A$ 中元素的总数：$|A \times A| = |A| \times |A| = n \times n = n^2$。其次，一个包含 $n^2$ 个元素的集合，其所有可能子集（即幂集）的个数为 $2^{n^2}$ 个。因此，集合 $A$ 上的二元关系总共有 $2^{n^2}$ 个。
+	
+	\textbf{A 选项}：$2^n$ 是集合 $A$ 的子集个数，也就是 $A$ 的一元关系的个数，而不是二元关系的个数。此选项错误。
+	
+	\textbf{B 选项}：$2^{n^2}$ 正好等于笛卡尔积 $A \times A$ 的子集总数，即二元关系的个数。此选项正确。
+	
+	\textbf{C 选项}：$n^2$ 是笛卡尔积 $A \times A$ 中的元素个数，代表的是全域关系中包含的有序对数量，而不是关系的种类数。此选项错误。
+	
+	\textbf{D 选项}：$n^n$ 是从集合 $A$ 映射到集合 $A$ 的所有可能函数的个数。由于每一个函数也是一种特殊的二元关系，所以 $n^n$ 只是关系的一部分，并不是所有二元关系的总数。此选项错误。
+	
+	\textbf{正确答案：B}
+
+	\item \textbf{解：}\\
+	已知集合 $A = \{\emptyset, \{1\}, \{1, 3\}, \{1, 2, 3\}\}$。\\
+	分析集合 $A$ 中各个元素之间的包含关系（$\subseteq$）：\\
+	显然有 $\emptyset \subseteq \{1\}$；\\
+	$\{1\} \subseteq \{1, 3\}$；\\
+	$\{1, 3\} \subseteq \{1, 2, 3\}$。\\
+	由于集合中的包含关系具有传递性，这四个元素实际上构成了一个全序关系（即任意两个元素都是可比的，形成一条单向的包含链）。\\
+	在绘制哈斯图（Hasse Diagram）时，包含关系表示为自下而上的连线，且省略自环和传递边。因此，最底层应当是最小元 $\emptyset$，往上依次用线段连接 $\{1\}$，然后是 $\{1, 3\}$，最顶层是最大元 $\{1, 2, 3\}$。整体图形必须是一条垂直的直线。\\
+	观察四个选项，只有 A 选项的图形是一条垂直的链条。\\
+	故选 \textbf{A}。
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	题目要求判断哪个关系能构成函数。在集合论中，一个二元关系若要构成函数，必须满足“右唯一性”（单值性）：即对于定义域中的每一个输入值 $x_1$，有且仅有一个唯一的输出值 $x_2$ 与之对应。\\
+	逐项进行分析：\\
+	\textbf{A 选项}：$f = \{\langle x_1, x_2 \rangle \mid x_1, x_2 \in \mathbb{R}, x_1 = x_2^2\}$。假设输入 $x_1 = 4$，则满足 $4 = x_2^2$ 的 $x_2$ 有 $2$ 和 $-2$ 两个值。即 $\langle 4, 2 \rangle \in f$ 且 $\langle 4, -2 \rangle \in f$。一个输入对应了多个输出，不满足单值性，不能构成函数。\\
+	\textbf{B 选项}：$f = \{\langle x_1, x_2 \rangle \mid (x_1, x_2 \in \mathbb{N}) \land (x_1 + x_2 = 10)\}$。题目通常默认函数是指在指定集合上的全函数。对于定义域 $\mathbb{N}$ 中的元素（例如取 $x_1 = 11$），解得 $x_2 = -1$，但 $-1 \notin \mathbb{N}$。这意味着定义域中存在部分元素找不到对应的映射值，因此它不是 $\mathbb{N}$ 上的全函数。\\
+	\textbf{C 选项}：$f = \{\langle x, |x| \rangle \mid x \in \mathbb{R}\}$。在这个关系中，第一元是 $x$，第二元是 $|x|$。对于实数集 $\mathbb{R}$ 中的任意一个实数 $x$，它的绝对值 $|x|$ 都是唯一确定的实数。对于每一个输入，都有且仅有一个确定的输出，完全符合函数的定义（这就是标准的绝对值函数）。\\
+	\textbf{D 选项}：$f = \{\langle x_1, x_2 \rangle \mid x_1, x_2 \in \mathbb{N}, x_2 \text{为小于} x_1 \text{的素数的个数}\}$。若自然数集 $\mathbb{N}$ 的定义不包含 $0$（部分国内旧教材标准 $\mathbb{N}=\{1,2,3...\}$），当 $x_1=1$ 时，小于 1 的素数个数为 0，而 $0 \notin \mathbb{N}$，此时找不到映射值。相较之下，C 选项是数学中最基础、无任何定义域歧义的函数形式。\\
+	故选 \textbf{C}。
+	
+	\vspace{1em}
+	
+	\item \textbf{解：}\\
+	已知集合 $S = \{1, 2, 3\}$。观察关系 $R$ 的关系图，图中的三个顶点 1, 2, 3 各有一个自环，且不存在任何其他的有向边（即不同顶点间没有边）。这说明关系 $R$ 的集合表示为：
+	\[ R = \{\langle 1, 1 \rangle, \langle 2, 2 \rangle, \langle 3, 3 \rangle\} \]
+	这就是集合 $S$ 上的恒等关系。我们逐一分析其性质：\\
+	\textbf{1. 自反性：} 根据定义，对任意 $x \in S$，若都有 $\langle x, x \rangle \in R$，则关系自反。由于 $S$ 中的 1, 2, 3 均在 $R$ 中有对应的有序对（都有自环），故自反性成立。\\
+	\textbf{2. 对称性：} 根据定义，若 $\langle x, y \rangle \in R$，则必有 $\langle y, x \rangle \in R$。在关系 $R$ 中，所有的元素均为 $\langle x, x \rangle$ 的形式，交换 $x$ 和 $y$ 的位置后仍为 $\langle x, x \rangle \in R$，故条件成立（满足“空真”），对称性成立。\\
+	\textbf{3. 反对称性：} 根据定义，若 $\langle x, y \rangle \in R$ 且 $\langle y, x \rangle \in R$，则必有 $x = y$。因为 $R$ 中不存在 $x \neq y$ 的有序对，前提条件中的冲突不可能发生，故条件成立（满足“空真”），反对称性成立。\\
+	\textbf{4. 传递性：} 根据定义，若 $\langle x, y \rangle \in R$ 且 $\langle y, z \rangle \in R$，则必有 $\langle x, z \rangle \in R$。由于 $R$ 中仅有恒等对，即 $x=y$ 且 $y=z$，必然推导出 $x=z$，即 $\langle x, z \rangle \in R$ 恒成立，故传递性成立。\\
+	综上所述，$R$ 具有自反、对称、反对称、传递的性质。\\
+	故选 \textbf{D}。
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	已知集合 $A = \{1, 2, 3\}$，其包含的元素个数（即基数）为 $|A| = 3$。\\
+	根据定义，集合 $A$ 上的二元关系是笛卡尔积 $A \times A$ 的子集。\\
+	首先计算笛卡尔积 $A \times A$ 的元素个数：
+	\[ |A \times A| = |A| \times |A| = 3 \times 3 = 3^2 \]
+	所以 $A \times A$ 中共有 $3^2$ 个不同的有序对。\\
+	再根据集合论原理，对于一个含有 $n$ 个元素的集合，其所有可能子集（即幂集）的数量为 $2^n$ 个。\\
+	将 $n = 3^2$ 代入，可知 $A \times A$ 的子集总数为 $2^{3^2}$ 个，这就代表了集合 $A$ 上所有可能的二元关系的总数。\\
+	故选 \textbf{A}。
+	
+	\vspace{1em}
+	
+	\item \textbf{解：}\\
+	已知 $R, S$ 是集合 $A$ 上的关系。考察选项 D，若 $R, S$ 都是自反的，则对于任意 $x \in A$，均有 $(x, x) \in R$ 且 $(x, x) \in S$。根据复合关系 $R \circ S$ 的定义，必定存在中间元素（取 $y = x$）使得 $(x, x) \in R \circ S$ 成立。因此 $R \circ S$ 也是自反的，选项 D 正确。（注：传递性、反对称性、对称性在复合运算下一般不封闭，可轻易举出反例）。\\
+	\textbf{故选 D。}
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	根据给定的有向图，忽略自反的自环，图中的有向边（即关系）包含：$$E = \{ (3,1), (1,2), (3,4), (4,2), (3,2), (1,4) \}$$求其哈斯图需要求出覆盖关系，即剔除所有可通过传递性推导出的边。检查发现：
+	\begin{enumerate}
+		\item 由 $(3,1)$ 和 $(1,4)$，可传递推导出 $(3,4)$，故图中存在的 $(3,4)$ 应剔除。\\
+		\item 由 $(1,4)$ 和 $(4,2)$，可传递推导出 $(1,2)$，故图中存在的 $(1,2)$ 应剔除。\\
+		\item 由 $(3,1)$、$(1,4)$ 和 $(4,2)$（即 $3 \prec 1 \prec 4 \prec 2$），可推导出 $(3,2)$，故图中存在的 $(3,2)$ 应剔除。\\
+	\end{enumerate}
+	剔除多余的传递边后，剩下的直接覆盖关系为：$(3,1)$、$(1,4)$、$(4,2)$。这构成了一个全序关系（链）：$3 \prec 1 \prec 4 \prec 2$。反映在哈斯图上，应当是一条从下到上的单一直线，最底层是 3，往上依次是 1、4，最高层是 2。观察选项，只有 D 选项符合此拓扑结构。\\
+	\textbf{故选 D。}
+	
+	\item \textbf{解:}\\
+	已知哈斯图对应的全集 $A = \{1, 2, 3, 4, 5\}$，考查其子集 $B = \{2, 3, 4\}$。
+	\begin{itemize}
+		\item \textbf{最大元}：$B$ 中不存在大于等于 $B$ 中所有其他元素的元素（2 和 3 不可比），故\textbf{无}最大元。
+		\item \textbf{最小元}：$B$ 中元素 4 满足 $4 \le 2$ 且 $4 \le 3$，故最小元为 \textbf{4}。
+		\item \textbf{极大元}：$B$ 中没有严格大于 2 或 3 的元素，故极大元为 \textbf{2, 3}。
+		\item \textbf{极小元}：$B$ 中没有严格小于 4 的元素，故极小元为 \textbf{4}。
+		\item \textbf{上界}：在全集 $A$ 中，大于等于 $B$ 中所有元素（2, 3, 4）的元素仅有 \textbf{1}。
+		\item \textbf{上确界}：所有上界中的最小者，显然为 \textbf{1}。
+		\item \textbf{下界}：在全集 $A$ 中，小于等于 $B$ 中所有元素（2, 3, 4）的元素仅有 \textbf{4}（节点 5 不满足小于等于 2 和 4）。
+		\item \textbf{下确界}：所有下界中的最大者，显然为 \textbf{4}。
+	\end{itemize}
+	将上述结果依次排列为：无, 4, 2, 3, 4, 1, 1, 4, 4。对比各项，与 D 选项完全一致。\\
+	\textbf{故选 D。}
+	
 \end{enumerate}
 
-%\subsection{第二章测试题解}
+\subsubsection{填空题}
+
+\begin{enumerate}
+	\item \textbf{解：}\\
+	已知集合 $A = \{1, 2, 3, 4, 5, 6\}$, $B = \{1, 2, 3\}$，关系 $R = \{\langle x, y \rangle \mid x = y^2\}$ 且 $x \in A, y \in B$。\\
+	当 $y = 1$ 时，$x = 1^2 = 1 \in A$，故 $\langle 1, 1 \rangle \in R$；\\
+	当 $y = 2$ 时，$x = 2^2 = 4 \in A$，故 $\langle 4, 2 \rangle \in R$；\\
+	当 $y = 3$ 时，$x = 3^2 = 9 \notin A$，不属于集合 A。\\
+	因此，$R = \{\langle 1, 1 \rangle, \langle 4, 2 \rangle\}$。\\
+	其逆关系 $R^{-1} = \{\langle y, x \rangle \mid \langle x, y \rangle \in R\} = \{\langle 1, 1 \rangle, \langle 2, 4 \rangle\}$。
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	已知集合 $A = \{1, 2, 3, 4, 5, 6\}$，$R$ 是 $A$ 上的整除关系，即 $R = \{\langle x, y \rangle \mid x \text{ 整除 } y \}$。\\
+	穷举符合条件的序偶：\\
+	$1$ 可以整除 $1, 2, 3, 4, 5, 6$；\\
+	$2$ 可以整除 $2, 4, 6$；\\
+	$3$ 可以整除 $3, 6$；\\
+	$4, 5, 6$ 分别只能整除自身。\\
+	故 $R = \{\langle 1, 1 \rangle, \langle 1, 2 \rangle, \langle 1, 3 \rangle, \langle 1, 4 \rangle, \langle 1, 5 \rangle, \langle 1, 6 \rangle, \langle 2, 2 \rangle, \langle 2, 4 \rangle, \langle 2, 6 \rangle, \langle 3, 3 \rangle, \langle 3, 6 \rangle, \langle 4, 4 \rangle, \langle 5, 5 \rangle, \langle 6, 6 \rangle\}$。
+	
+	\vspace{1em}
+	
+	\item \textbf{解；}\\
+	已知集合 $A = \{1, 2, 3, 4, 5, 6\}$, $B = \{1, 2, 3\}$，关系 $R = \{\langle x, y \rangle \mid x = 2y\}$ 且 $x \in A, y \in B$。\\
+	当 $y = 1$ 时，$x = 2 \in A$，故 $\langle 2, 1 \rangle \in R$；\\
+	当 $y = 2$ 时，$x = 4 \in A$，故 $\langle 4, 2 \rangle \in R$；\\
+	当 $y = 3$ 时，$x = 6 \in A$，故 $\langle 6, 3 \rangle \in R$。\\
+	因此，$R = \{\langle 2, 1 \rangle, \langle 4, 2 \rangle, \langle 6, 3 \rangle\}$。\\
+	其逆关系 $R^{-1} = \{\langle 1, 2 \rangle, \langle 2, 4 \rangle, \langle 3, 6 \rangle\}$。
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	已知集合 $A = \{a, b, c\}$ 上的二元关系 $R = \{\langle a, a \rangle, \langle a, b \rangle, \langle a, c \rangle, \langle c, c \rangle\}$。\\
+	对称闭包 $s(R) = R \cup R^{-1}$。\\
+	$R^{-1} = \{\langle a, a \rangle, \langle b, a \rangle, \langle c, a \rangle, \langle c, c \rangle\}$。\\
+	故 $s(R) = \{\langle a, a \rangle, \langle a, b \rangle, \langle b, a \rangle, \langle a, c \rangle, \langle c, a \rangle, \langle c, c \rangle\}$。
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	根据哈斯图，偏序关系 $R$ 需要满足自反性、反对称性和传递性。\\
+	自反性：包含所有节点的自环，$\langle a, a \rangle, \langle b, b \rangle, \langle c, c \rangle, \langle d, d \rangle$。\\
+	覆盖关系（图中直接相连的边，由下往上）：$\langle a, b \rangle, \langle a, c \rangle, \langle b, d \rangle, \langle c, d \rangle$。\\
+	传递性：由 $a \prec b$ 且 $b \prec d$ 推导出 $\langle a, d \rangle$。\\
+	综合可得：$R = \{\langle a, a \rangle, \langle b, b \rangle, \langle c, c \rangle, \langle d, d \rangle, \langle a, b \rangle, \langle a, c \rangle, \langle b, d \rangle, \langle c, d \rangle, \langle a, d \rangle\}$。
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	集合 A上的偏序关系必须满足的三个性质是：\textbf{自反性}、\textbf{反对称性}、\textbf{传递性}。
+	
+	\vspace{1em}
+	
+	\item \textbf{解：}\\
+	根据给定的关系图，写出关系 $R$ 的集合表示：\\
+	$R = \{\langle 1, 2 \rangle, \langle 2, 1 \rangle, \langle 2, 3 \rangle, \langle 3, 4 \rangle\}$。\\
+	根据复合关系的定义求 $R^2 = R \circ R$：\\
+	因为 $\langle 1, 2 \rangle \in R, \langle 2, 1 \rangle \in R$，故 $\langle 1, 1 \rangle \in R^2$；\\
+	因为 $\langle 1, 2 \rangle \in R, \langle 2, 3 \rangle \in R$，故 $\langle 1, 3 \rangle \in R^2$；\\
+	因为 $\langle 2, 1 \rangle \in R, \langle 1, 2 \rangle \in R$，故 $\langle 2, 2 \rangle \in R^2$；\\
+	因为 $\langle 2, 3 \rangle \in R, \langle 3, 4 \rangle \in R$，故 $\langle 2, 4 \rangle \in R^2$。\\
+	所以 $R^2 = \{\langle 1, 1 \rangle, \langle 1, 3 \rangle, \langle 2, 2 \rangle, \langle 2, 4 \rangle\}$。
+	
+	\vspace{1em}
+	
+	\item \textbf{解：}\\
+	既是等价关系又是偏序关系的例子是：\textbf{集合 A 上的恒等关系}（或写为 $I_A = \{\langle x, x \rangle \mid x \in A\}$）。\\
+	（解释：等价关系要求对称性，偏序关系要求反对称性。若同时满足，则对于任意 $\langle x, y \rangle \in R$，必有 $\langle y, x \rangle \in R$，进而推出 $x = y$。再加上等价和偏序都要求的自反性，必然只有恒等关系满足条件。）
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	已知集合 $A = \{1, 2, 3, 4, 5, 6\}$, $B = \{1, 2, 3\}$。\\
+	关系 $R = \{\langle x, y \rangle \mid x = y^2, x \in A, y \in B\} = \{\langle 1, 1 \rangle, \langle 4, 2 \rangle\}$。\\
+	$R$ 的关系矩阵 $M_R$（行对应 $A$ 中元素 $1\sim 6$，列对应 $B$ 中元素 $1\sim 3$）为：
+	$$
+	M_R = \begin{bmatrix}
+		1 & 0 & 0 \\
+		0 & 0 & 0 \\
+		0 & 0 & 0 \\
+		0 & 1 & 0 \\
+		0 & 0 & 0 \\
+		0 & 0 & 0
+	\end{bmatrix}
+	$$
+	逆关系 $R^{-1} = \{\langle 1, 1 \rangle, \langle 2, 4 \rangle\}$。\\
+	$R^{-1}$ 的关系矩阵 $M_{R^{-1}}$ 也就是 $M_R$ 的转置矩阵 $M_R^T$：
+	$$
+	M_{R^{-1}} = \begin{bmatrix}
+		1 & 0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 1 & 0 & 0 \\
+		0 & 0 & 0 & 0 & 0 & 0
+	\end{bmatrix}
+	$$
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	集合 A 上的等价关系的三个性质是：\textbf{自反性}、\textbf{对称性}、\textbf{传递性}。
+	
+	\vspace{1em}
+	
+	\item \textbf{解:}\\
+	已知集合 $S = \{1, 2, 3, 4\}$ 上的关系 $R = \{\langle 1, 2 \rangle, \langle 2, 1 \rangle, \langle 2, 3 \rangle, \langle 3, 4 \rangle\}$。\\
+	（1）求 $R \circ R$（也就是 $R^2$）：\\
+	这与第 7 题的集合对应关系完全一致，由复合关系定义可得：\\
+	$R \circ R = \{\langle 1, 1 \rangle, \langle 1, 3 \rangle, \langle 2, 2 \rangle, \langle 2, 4 \rangle\}$。\\
+	（2）求 $R^{-1}$：\\
+	将 $R$ 中所有序偶的元素位置互换即可得到逆关系：\\
+	$R^{-1} = \{\langle 2, 1 \rangle, \langle 1, 2 \rangle, \langle 3, 2 \rangle, \langle 4, 3 \rangle\}$。
+	
+\end{enumerate}
+
 
 
 
