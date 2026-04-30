@@ -1,7 +1,0 @@
-\contentsline {section}{\numberline {1}课后测验题目}{1}{section.1}%
-\contentsline {subsection}{\numberline {1.1}第一章测试}{1}{subsection.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.1}单选题}{1}{subsubsection.1.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.2}填空题}{2}{subsubsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.2}第二章测试}{4}{subsection.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1}单选题}{4}{subsubsection.1.2.1}%
-\contentsline {subsubsection}{\numberline {1.2.2}填空题}{7}{subsubsection.1.2.2}%
