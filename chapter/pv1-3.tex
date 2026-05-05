@@ -1,0 +1,381 @@
+\subsection{命题逻辑的推理理论}
+
+\subsubsection{定义}
+
+设 $A$ 和 $B$ 是两个命题公式，当且仅当 $A \to B$ 是重言式时，称从 $A$ 可推出 $B$，或 $B$ 是前提 $A$ 的结论，记为 $A \Rightarrow B$。
+
+\textbf{证由前提 $A$ 推出结论 $B$ 的方法:}
+
+\begin{enumerate}
+	\item 真值表法；
+	\item 等值演算法；
+	\item 在自然推理系统 $P$ 中用推理规则证明。
+\end{enumerate}
+
+\subsubsection{推理规则}
+
+\begin{enumerate}
+	\item $p \land q \Rightarrow p,\quad p \land q \Rightarrow q$ \hfill （化简规则）
+	\item $p \Rightarrow p \lor q,\quad q \Rightarrow p \lor q$ \hfill （附加规则）
+	\item $p,\ p \to q \Rightarrow q$ \hfill （假言推理）
+	\item $p \to q,\ \neg q \Rightarrow \neg p$ \hfill （拒取式）
+	\item $p \lor q,\ \neg p \Rightarrow q$ \hfill （析取三段论）
+	\item $p,\ q \Rightarrow p \land q$ \hfill （合取式）
+	\item $p \to q,\ q \to r \Rightarrow p \to r$ \hfill （假言三段论）
+	\item $p \leftrightarrow q,\ q \leftrightarrow r \Rightarrow p \leftrightarrow r$ \hfill （等价三段论）
+	\item $p \to q,\ r \to s,\ p \lor r \Rightarrow q \lor s$ \hfill （构造性二难）
+	\item $p \lor q,\ \neg p \lor s \Rightarrow q \lor s$ \hfill （归结式）
+\end{enumerate}
+
+\begin{question}{例题1}
+证明：\((p \vee q) \land (p \leftrightarrow r) \land (q \rightarrow s) \Rightarrow s \vee r\)
+
+\textbf{解答：}
+
+令
+\[
+A=(p \vee q) \land (p \leftrightarrow r) \land (q \rightarrow s),
+\qquad
+B=s\vee r
+\]
+要证明
+\[
+A\Rightarrow B
+\]
+只需证明
+\[
+A\land \neg B
+\]
+为矛盾式。
+
+即证明：
+\[
+(p \vee q) \land (p \leftrightarrow r) \land (q \rightarrow s)\land \neg(s\vee r)
+\]
+为矛盾式。
+
+下面进行等值演算：
+\begin{align*}
+	& (p \vee q) \land (p \leftrightarrow r) \land (q \rightarrow s)\land \neg(s\vee r) \\
+	\Leftrightarrow{}&
+	(p \vee q) \land \bigl((p\rightarrow r)\land(r\rightarrow p)\bigr)
+	\land (\neg q\vee s)\land(\neg s\land \neg r) \\
+	\Leftrightarrow{}&
+	(p \vee q) \land (\neg p\vee r)\land(\neg r\vee p)
+	\land(\neg q\vee s)\land\neg s\land \neg r \\
+	\Leftrightarrow{}&
+	(p \vee q) \land \bigl((\neg p\vee r)\land \neg r\bigr)
+	\land(\neg r\vee p)
+	\land\bigl((\neg q\vee s)\land\neg s\bigr) \\
+	\Leftrightarrow{}&
+	(p \vee q) \land (\neg p\land \neg r)
+	\land(\neg r\vee p)
+	\land(\neg q\land \neg s) \\
+	\Leftrightarrow{}&
+	(p \vee q)\land \neg p\land \neg q\land \neg r\land \neg s \\
+	\Leftrightarrow{}&
+	\bigl((p\vee q)\land \neg p\land \neg q\bigr)
+	\land \neg r\land \neg s \\
+	\Leftrightarrow{}&
+	\bigl((p\land \neg p\land \neg q)\vee(q\land \neg p\land \neg q)\bigr)
+	\land \neg r\land \neg s \\
+	\Leftrightarrow{}&
+	0
+\end{align*}
+因此，
+\[
+(p \vee q) \land (p \leftrightarrow r) \land (q \rightarrow s)\land \neg(s\vee r)
+\]
+为矛盾式。
+所以，
+\[
+(p \vee q) \land (p \leftrightarrow r) \land (q \rightarrow s) \Rightarrow s \vee r
+\]
+解释：
+如果结论 \(s\vee r\) 为假，则有
+\[
+\neg(s\vee r)\Leftrightarrow \neg s\land \neg r
+\]
+由
+\[
+p\leftrightarrow r
+\]
+可得
+\[
+p\rightarrow r
+\]
+即
+\[
+\neg p\vee r
+\]
+再结合 \(\neg r\)，可推出
+\[
+\neg p
+\]
+由
+\[
+q\rightarrow s
+\]
+即
+\[
+\neg q\vee s
+\]
+再结合 \(\neg s\)，可推出
+\[
+\neg q
+\]
+于是得到
+\[
+\neg p\land \neg q
+\]
+但前提中又有
+\[
+p\vee q
+\]
+这与
+\[
+\neg p\land \neg q
+\]
+矛盾。
+
+因此当前提
+\[
+(p \vee q) \land (p \leftrightarrow r) \land (q \rightarrow s)
+\]
+成立时，结论
+\[
+s\vee r
+\]
+必成立。
+
+
+\end{question}
+
+\begin{question}{例题2}
+给出下面推论的形式证明：
+
+若马会飞或羊吃草，则母鸡就会变飞鸟；
+
+如果母鸡变了飞鸟，那么烤熟的鸭子还会跑；
+
+烤熟的鸭子不会跑，所以羊儿不吃草。
+
+\textbf{解答：}
+
+设命题变元如下：
+\[
+p:\text{马会飞}
+\]
+\[
+q:\text{羊吃草}
+\]
+\[
+r:\text{母鸡变飞鸟}
+\]
+\[
+s:\text{烤熟的鸭子会跑}
+\]
+
+则题中的推论可符号化为：
+\[
+(p\vee q)\to r,\quad r\to s,\quad \neg s \vdash \neg q
+\]
+
+即需要证明：
+\[
+\bigl((p\vee q)\to r\bigr)\land(r\to s)\land \neg s \Rightarrow \neg q
+\]
+
+形式证明如下：
+\[
+\begin{array}{c|l|l}
+	序号 & 公式 & 理由 \\
+	\hline
+	1 & (p\vee q)\to r & 前提 \\
+	2 & r\to s & 前提 \\
+	3 & \neg s & 前提 \\
+	4 & \neg r & 由 2,3 用拒取式 \\
+	5 & \neg(p\vee q) & 由 1,4 用拒取式 \\
+	6 & \neg p\land \neg q & 由 5 用德摩根律 \\
+	7 & \neg q & 由 6 用化简律
+\end{array}
+\]
+
+所以可得：
+\[
+\neg q
+\]
+
+因此原推论成立，即：
+\[
+(p\vee q)\to r,\quad r\to s,\quad \neg s \vdash \neg q
+\]
+
+用文字解释就是：
+
+由
+\[
+r\to s
+\]
+和
+\[
+\neg s
+\]
+可推出
+\[
+\neg r
+\]
+即母鸡没有变飞鸟。
+
+又由
+\[
+(p\vee q)\to r
+\]
+和
+\[
+\neg r
+\]
+可推出
+\[
+\neg(p\vee q)
+\]
+
+根据德摩根律：
+\[
+\neg(p\vee q)\Leftrightarrow \neg p\land \neg q
+\]
+
+所以得到：
+\[
+\neg q
+\]
+
+即羊儿不吃草。
+
+
+\end{question}
+
+\begin{question}{例题3}
+
+用附加前提证明法证明：
+
+如果小张和小王去看电影，则小李也去看电影；
+
+小赵不去看电影或小张去看电影，小王去看电影；
+
+所以当小赵去看电影时，小李也去。
+
+\textbf{解答：}
+
+设命题变元如下：
+\[
+p:\text{小张去看电影}
+\]
+\[
+q:\text{小王去看电影}
+\]
+\[
+r:\text{小李去看电影}
+\]
+\[
+s:\text{小赵去看电影}
+\]
+则题中前提和结论可符号化为：
+\[
+(p\land q)\to r
+\]
+\[
+\neg s\vee p
+\]
+\[
+q
+\]
+结论为：
+\[
+s\to r
+\]
+即需要证明：
+\[
+(p\land q)\to r,\quad \neg s\vee p,\quad q \vdash s\to r
+\]
+使用附加前提证明法。
+为了证明
+\[
+s\to r
+\]
+只需附加前提
+\[
+s
+\]
+然后推出
+\[
+r
+\]
+形式证明如下：
+\[
+\begin{array}{c|l|l}
+	序号 & 公式 & 理由 \\
+	\hline
+	1 & (p\land q)\to r & 前提 \\
+	2 & \neg s\vee p & 前提 \\
+	3 & q & 前提 \\
+	4 & s & 附加前提 \\
+	5 & p & 由 2,4 用析取三段论 \\
+	6 & p\land q & 由 5,3 用合取引入律 \\
+	7 & r & 由 1,6 用假言推理 \\
+	8 & s\to r & 由 4--7 用附加前提证明法
+\end{array}
+\]
+因此，
+\[
+(p\land q)\to r,\quad \neg s\vee p,\quad q \vdash s\to r
+\]
+所以原推论成立。
+文字解释：
+为了证明“当小赵去看电影时，小李也去”，即证明
+\[
+s\to r
+\]
+我们先假设小赵去看电影，即
+\[
+s
+\]
+又因为前提中有
+\[
+\neg s\vee p
+\]
+即“小赵不去看电影或小张去看电影”。
+在已经假设
+\[
+s
+\]
+成立的情况下，\(\neg s\) 为假，因此只能推出
+\[
+p
+\]
+即小张去看电影。
+又已知
+\[
+q
+\]
+即小王去看电影，所以有
+\[
+p\land q
+\]
+由前提
+\[
+(p\land q)\to r
+\]
+可推出
+\[
+r
+\]
+即小李去看电影。
+所以由附加前提证明法可得：
+\[
+s\to r
+\]
+即当小赵去看电影时，小李也去看电影。
+
+
+\end{question}

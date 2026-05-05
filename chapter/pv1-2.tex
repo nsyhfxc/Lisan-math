@@ -1,0 +1,781 @@
+\subsection{命题逻辑等值演算}
+
+\subsubsection{等值式}
+
+若$A \leftrightarrow B$为永真式，则称 $A$、$B$ 是等值的。记作$A \Leftrightarrow B$称 $A \Leftrightarrow B$ 为等值式。
+
+\subsubsection{常见等值式}
+设 $p,q,r$ 为任意命题，$1$ 表示永真式，$0$ 表示矛盾式。
+\begin{enumerate}
+	\item 双否律
+	\begin{align*}
+		\neg(\neg p) \Leftrightarrow p
+	\end{align*}
+	
+	\item 幂等律
+	\begin{align*}
+		\begin{aligned}
+			p \land p &\Leftrightarrow p \\
+			p \lor p &\Leftrightarrow p
+		\end{aligned}
+	\end{align*}
+	
+	\item 交换律
+	\begin{align*}
+		\begin{aligned}
+			p \land q &\Leftrightarrow q \land p \\
+			p \lor q &\Leftrightarrow q \lor p
+		\end{aligned}
+	\end{align*}
+	
+	\item 结合律
+	\begin{align*}
+		\begin{aligned}
+			(p \land q) \land r &\Leftrightarrow p \land (q \land r),\\
+			(p \lor q) \lor r &\Leftrightarrow p \lor (q \lor r)
+		\end{aligned}
+	\end{align*}
+	
+	\item 分配律
+	\begin{align*}
+		\begin{aligned}
+			p \land (q \lor r) &\Leftrightarrow (p \land q) \lor (p \land r),\\
+			p \lor (q \land r) &\Leftrightarrow (p \lor q) \land (p \lor r)
+		\end{aligned}
+	\end{align*}
+	
+	\item 德摩根律
+	\begin{align*}
+		\begin{aligned}
+			\neg(p \land q) &\Leftrightarrow \neg p \lor \neg q,\\
+			\neg(p \lor q) &\Leftrightarrow \neg p \land \neg q
+		\end{aligned}
+	\end{align*}
+	
+	\item 吸收律
+	\begin{align*}
+		\begin{aligned}
+			p \land (p \lor q) &\Leftrightarrow p,\\
+			p \lor (p \land q) &\Leftrightarrow p
+		\end{aligned}
+	\end{align*}
+	
+	\item 零律
+	\begin{align*}
+		\begin{aligned}
+			p \land 0 &\Leftrightarrow 0,\\
+			p \lor 1 &\Leftrightarrow 1
+		\end{aligned}
+	\end{align*}
+	
+	\item 同一律
+	\begin{align*}
+		\begin{aligned}
+			p \land 1 &\Leftrightarrow p,\\
+			p \lor 0 &\Leftrightarrow p
+		\end{aligned}
+	\end{align*}
+	
+	\item 排中律
+	\begin{align*}
+		p \lor \neg p \Leftrightarrow 1
+	\end{align*}
+	
+	\item 矛盾律
+	\begin{align*}
+		p \land \neg p \Leftrightarrow 0
+	\end{align*}
+	
+	\item 蕴含等值式
+	\begin{align*}
+		\begin{aligned}
+			p \rightarrow q &\Leftrightarrow \neg p \lor q,\\
+			\neg(p \rightarrow q) &\Leftrightarrow p \land \neg q
+		\end{aligned}
+	\end{align*}
+	
+	\item 等价等值式
+	\begin{align*}
+		\begin{aligned}
+			p \leftrightarrow q 
+			&\Leftrightarrow (p \rightarrow q) \land (q \rightarrow p),\\
+			p \leftrightarrow q
+			&\Leftrightarrow (p \land q) \lor (\neg p \land \neg q)
+		\end{aligned}
+	\end{align*}
+	
+	\item 假言易位
+	\begin{align*}
+		p \rightarrow q \Leftrightarrow \neg q \rightarrow \neg p
+	\end{align*}
+	
+	\item 等价否定
+	\begin{align*}
+		\begin{aligned}
+			p \leftrightarrow q 
+			&\Leftrightarrow \neg p \leftrightarrow \neg q,\\
+			\neg(p \leftrightarrow q)
+			&\Leftrightarrow p \leftrightarrow \neg q
+			\Leftrightarrow \neg p \leftrightarrow q
+		\end{aligned}
+	\end{align*}
+	
+	\item 归谬论
+	\begin{align*}
+		p \rightarrow q \Leftrightarrow (p \land \neg q) \rightarrow 0
+	\end{align*}
+\end{enumerate}
+
+\begin{question}{例题1}
+	判断公式类型
+	\begin{enumerate}
+		
+		\item \(p \land r \land \neg(q \to p)\)
+		
+		\begin{align*}
+			p \land r \land \neg(q \to p)
+			&\Leftrightarrow p \land r \land \neg(\neg q \lor p) \\
+			&\Leftrightarrow p \land r \land (q \land \neg p) \\
+			&\Leftrightarrow p \land \neg p \land q \land r \\
+			&\Leftrightarrow 0
+		\end{align*}
+		
+		所以，
+		\begin{align*}
+			p \land r \land \neg(q \to p)
+		\end{align*}
+		为矛盾式，也叫永假式。
+		
+		解释：因为 \(q \to p \Leftrightarrow \neg q \lor p\)，所以
+		\begin{align*}
+			\neg(q \to p) \Leftrightarrow \neg(\neg q \lor p)
+			\Leftrightarrow q \land \neg p
+		\end{align*}
+		原公式中同时含有 \(p\) 和 \(\neg p\)，即
+		\begin{align*}
+			p \land \neg p \Leftrightarrow 0
+		\end{align*}
+		因此该公式永远为假。
+		
+		\item \((\neg P \land Q) \to \neg R\)
+		
+		\begin{align*}
+			(\neg P \land Q) \to \neg R
+			&\Leftrightarrow \neg(\neg P \land Q) \lor \neg R \\
+			&\Leftrightarrow (P \lor \neg Q) \lor \neg R \\
+			&\Leftrightarrow P \lor \neg Q \lor \neg R
+		\end{align*}
+		
+		所以，
+		\begin{align*}
+			(\neg P \land Q) \to \neg R
+		\end{align*}
+		不是永假式。
+		
+		当 \(P=0,Q=1,R=1\) 时，
+		\begin{align*}
+			P \lor \neg Q \lor \neg R
+			=0 \lor 0 \lor 0
+			=0
+		\end{align*}
+		公式为假。
+		
+		当 \(P=1,Q=1,R=1\) 时，
+		\begin{align*}
+			P \lor \neg Q \lor \neg R
+			=1 \lor 0 \lor 0
+			=1
+		\end{align*}
+		公式为真。
+		
+		因此该公式既不是永真式，也不是永假式，而是可满足式，或者称为偶然式。
+		
+	\end{enumerate}
+\end{question}
+
+\begin{question}{例题2}
+	证明：
+	\begin{align*}
+		q \to (p \to r) \Leftrightarrow (p \land q) \to r
+	\end{align*}
+	
+	证明如下：
+	\begin{align*}
+		q \to (p \to r)
+		&\Leftrightarrow \neg q \lor (p \to r) \\
+		&\Leftrightarrow \neg q \lor (\neg p \lor r) \\
+		&\Leftrightarrow \neg q \lor \neg p \lor r \\
+		&\Leftrightarrow \neg p \lor \neg q \lor r \\
+		&\Leftrightarrow \neg(p \land q) \lor r \\
+		&\Leftrightarrow (p \land q) \to r
+	\end{align*}
+	
+	所以，
+	
+	\begin{align*}
+		q \to (p \to r) \Leftrightarrow (p \land q) \to r
+	\end{align*}
+	
+	解释：证明中主要使用了以下等值式：
+	\begin{align*}
+		A \to B \Leftrightarrow \neg A \lor B
+	\end{align*}
+	
+	以及德摩根律：
+	\begin{align*}
+		\neg(p \land q) \Leftrightarrow \neg p \lor \neg q
+	\end{align*}
+	
+	因此：
+	\begin{align*}
+		q \to (p \to r)
+	\end{align*}
+	
+	可以等值变形为
+	\begin{align*}
+		\neg q \lor \neg p \lor r
+	\end{align*}
+	
+	而
+	\begin{align*}
+		(p \land q) \to r
+	\end{align*}
+	
+	也等值于
+	\begin{align*}
+		\neg(p \land q) \lor r
+		\Leftrightarrow \neg p \lor \neg q \lor r
+	\end{align*}
+	
+	所以二者等值。
+\end{question}
+
+\subsubsection{析取范式、合取范式}
+\begin{enumerate}
+	\item[\textbf{def1:}] $p$ 为任意命题变量，则 $p$ 和 $\neg p$ 称为文字。
+	
+	\item[\textbf{def2:}] 有限个文字的析取称为析取式；\\
+	有限个文字的合取称为合取式。
+	
+	\item[\textbf{def3:}] 有限个合取式的析取称为析取范式；\\
+	有限个析取式的合取称为合取范式。
+\end{enumerate}
+
+\begin{question}{例题3}
+	求 $(P \lor Q)\leftrightarrow P$ 的合取范式和析取范式。
+	
+	解：
+	\begin{align*}
+		(P \lor Q)\leftrightarrow P
+		&\Leftrightarrow \big((P \lor Q)\to P\big)\land \big(P\to (P\lor Q)\big) \\
+		&\Leftrightarrow \big(\neg(P\lor Q)\lor P\big)\land \big(\neg P\lor (P\lor Q)\big) \\
+		&\Leftrightarrow \big((\neg P\land \neg Q)\lor P\big)\land \big((\neg P\lor P)\lor Q\big) \\
+		&\Leftrightarrow \big(P\lor(\neg P\land \neg Q)\big)\land 1 \\
+		&\Leftrightarrow \big((P\lor \neg P)\land (P\lor \neg Q)\big)\land 1 \\
+		&\Leftrightarrow \big(1\land (P\lor \neg Q)\big)\land 1 \\
+		&\Leftrightarrow P\lor \neg Q
+	\end{align*}
+	
+	因此，
+	
+	\begin{align*}
+		(P \lor Q)\leftrightarrow P \Leftrightarrow P\lor \neg Q
+	\end{align*}
+	
+	因为 \(P\lor \neg Q\) 本身就是一个析取式，所以它是析取范式：
+	
+	\begin{align*}
+		\boxed{P\lor \neg Q}
+	\end{align*}
+	
+	同时，\(P\lor \neg Q\) 也可以看作只有一个子句的合取式，因此它也是合取范式：
+	
+	\begin{align*}
+		\boxed{P\lor \neg Q}
+	\end{align*}
+	
+	所以，
+	
+	\begin{align*}
+		(P \lor Q)\leftrightarrow P
+	\end{align*}
+	
+	的析取范式为
+	
+	\begin{align*}
+		\boxed{P\lor \neg Q}
+	\end{align*}
+	
+	合取范式为
+	
+	\begin{align*}
+		\boxed{P\lor \neg Q}
+	\end{align*}
+	
+	解释：本题主要使用了以下等值式：
+	
+	\begin{align*}
+		A\leftrightarrow B \Leftrightarrow (A\to B)\land(B\to A)
+	\end{align*}
+	
+	\begin{align*}
+		A\to B \Leftrightarrow \neg A\lor B
+	\end{align*}
+	
+	以及分配律：
+	
+	\begin{align*}
+		A\lor(B\land C)\Leftrightarrow (A\lor B)\land(A\lor C)
+	\end{align*}
+	
+	如果要求主析取范式，则可继续展开：
+	
+	\begin{align*}
+		P\lor \neg Q
+		&\Leftrightarrow \big(P\land(Q\lor \neg Q)\big)\lor \big((P\lor \neg P)\land \neg Q\big) \\
+		&\Leftrightarrow (P\land Q)\lor(P\land \neg Q)\lor(P\land \neg Q)\lor(\neg P\land \neg Q) \\
+		&\Leftrightarrow (P\land Q)\lor(P\land \neg Q)\lor(\neg P\land \neg Q)
+	\end{align*}
+	
+	所以主析取范式为
+	
+	\begin{align*}
+		\boxed{(P\land Q)\lor(P\land \neg Q)\lor(\neg P\land \neg Q)}
+	\end{align*}
+	
+	如果要求主合取范式，由于公式只在 \(P=0,Q=1\) 时为假，所以主合取范式为
+	
+	\begin{align*}
+		\boxed{P\lor \neg Q}
+	\end{align*}
+	
+\end{question}
+
+\subsubsection{主析取范式、主合取范式}
+
+\begin{enumerate}
+	
+	
+	\item[\textbf{def 1：}] 含 \(n\) 个命题变元的合取式 \(G(p_{1},p_{2},\cdots,p_{n})\)，若每个 \(p_{i}\) 或 \(\neg p_{i}\) 出现且仅出现一次，而且出现次序与 \(p_{1},p_{2},\cdots,p_{n}\) 的次序保持一致，称该 \(G(p_{1},p_{2},\cdots,p_{n})\) 为一个小项（极小项）。
+	
+	\begin{enumerate}
+		
+		\item	\textbf{含两个命题变元 \(p\)、\(q\) 的小项}
+		\begin{center}
+			\begin{tabular}{|c|c|c|}
+				\hline
+				\textbf{公式} & \textbf{成真赋值} & \textbf{名称} \\
+				\hline
+				\(\neg p \land \neg q\) & \(00\) & \(m_0\) \\
+				\hline
+				\(\neg p \land q\) & \(01\) & \(m_1\) \\
+				\hline
+				\(p \land \neg q\) & \(10\) & \(m_2\) \\
+				\hline
+				\(p \land q\) & \(11\) & \(m_3\) \\
+				\hline
+			\end{tabular}
+		\end{center}
+		
+		\item	\textbf{含三个命题变元 \(p\)、\(q\)、\(r\) 的小项}
+		\begin{center}
+			\begin{tabular}{|c|c|c|}
+				\hline
+				\textbf{公式} & \textbf{成真赋值} & \textbf{名称} \\
+				\hline
+				\(\neg p \land \neg q \land \neg r\) & \(000\) & \(m_0\) \\
+				\hline
+				\(\neg p \land \neg q \land r\) & \(001\) & \(m_1\) \\
+				\hline
+				\(\neg p \land q \land \neg r\) & \(010\) & \(m_2\) \\
+				\hline
+				\(\neg p \land q \land r\) & \(011\) & \(m_3\) \\
+				\hline
+				\(p \land \neg q \land \neg r\) & \(100\) & \(m_4\) \\
+				\hline
+				\(p \land \neg q \land r\) & \(101\) & \(m_5\) \\
+				\hline
+				\(p \land q \land \neg r\) & \(110\) & \(m_6\) \\
+				\hline
+				\(p \land q \land r\) & \(111\) & \(m_7\) \\
+				\hline
+			\end{tabular}
+		\end{center}
+		
+	\end{enumerate}
+	
+	
+	\item[\textbf{def 2：}] 对析取范式 $A_1 \lor A_2 \lor \cdots \lor A_n$，若其中每个合取式 $A_i\,(i=1,2,\cdots,n)$ 都是小项，则称该析取范式为主析取范式。
+	
+	
+	\item[\textbf{def 3：}] 含 \(n\) 个命题变元的析取式 \(G(p_1,p_2,\cdots,p_n)\)，若 \(p_i\) 和 \(\neg p_i\) 出现且仅出现一次，并且出现次序与 \(p_1,p_2,\cdots,p_n\) 的次序保持一致，则称该 \(G(p_1,p_2,\cdots,p_n)\) 为一个大项（极大项）。
+	\begin{center}
+		\textbf{含两个命题变元 \(p\)、\(q\) 的大项}
+	\end{center}
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{公式} & \textbf{成假赋值} & \textbf{名称} \\
+			\hline
+			\(p\vee q\) & \(00\) & \(M_0\) \\
+			\hline
+			\(p\vee \neg q\) & \(01\) & \(M_1\) \\
+			\hline
+			\(\neg p\vee q\) & \(10\) & \(M_2\) \\
+			\hline
+			\(\neg p\vee \neg q\) & \(11\) & \(M_3\) \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\begin{center}
+		\textbf{含三个命题变元 \(p\)、\(q\)、\(r\) 的大项}
+	\end{center}
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{公式} & \textbf{成假赋值} & \textbf{名称} \\
+			\hline
+			\(p\vee q\vee r\) & \(000\) & \(M_0\) \\
+			\hline
+			\(p\vee q\vee \neg r\) & \(001\) & \(M_1\) \\
+			\hline
+			\(p\vee \neg q\vee r\) & \(010\) & \(M_2\) \\
+			\hline
+			\(p\vee \neg q\vee \neg r\) & \(011\) & \(M_3\) \\
+			\hline
+			\(\neg p\vee q\vee r\) & \(100\) & \(M_4\) \\
+			\hline
+			\(\neg p\vee q\vee \neg r\) & \(101\) & \(M_5\) \\
+			\hline
+			\(\neg p\vee \neg q\vee r\) & \(110\) & \(M_6\) \\
+			\hline
+			\(\neg p\vee \neg q\vee \neg r\) & \(111\) & \(M_7\) \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\item[\textbf{def 2：}] 对合取范式 $A_1 \land A_2 \land \cdots \land A_n$，若其中每个析取式 $A_i\,(i=1,2,\cdots,n)$ 都是大项，则称该合取范式为主合取范式。
+	
+\end{enumerate}
+
+
+\begin{question}{例题4}
+	求\(P \to Q\)的主合取范式和主析取范式。
+	
+	解：
+	\begin{align*}
+		P \to Q
+		&\Leftrightarrow \neg P \lor Q
+	\end{align*}
+	
+	先求主析取范式。
+	
+	因为主析取范式要求每一个简单合取式中都含有全部命题变元 \(P,Q\)，所以对
+	\[
+	\neg P \lor Q
+	\]
+	进行展开：
+	\begin{align*}
+		\neg P \lor Q
+		&\Leftrightarrow \big(\neg P \land (Q\lor \neg Q)\big)
+		\lor \big((P\lor \neg P)\land Q\big) \\
+		&\Leftrightarrow (\neg P\land Q)\lor(\neg P\land \neg Q)
+		\lor(P\land Q)\lor(\neg P\land Q) \\
+		&\Leftrightarrow (\neg P\land \neg Q)\lor(\neg P\land Q)\lor(P\land Q)
+	\end{align*}
+	
+	所以，\(P \to Q\) 的主析取范式为
+	\[
+	\boxed{(\neg P\land \neg Q)\lor(\neg P\land Q)\lor(P\land Q)}
+	\]
+	
+	再求主合取范式。
+	
+	由于
+	\[
+	P \to Q \Leftrightarrow \neg P \lor Q
+	\]
+	而 \(\neg P \lor Q\) 中已经含有全部命题变元 \(P,Q\)，并且每个命题变元只出现一次，所以它本身就是主合取范式。
+	
+	因此，\(P \to Q\) 的主合取范式为
+	\[
+	\boxed{\neg P \lor Q}
+	\]
+	
+	也可以用真值情况解释：
+	
+	\[
+	\begin{array}{c|c|c}
+		P & Q & P\to Q\\
+		\hline
+		0 & 0 & 1\\
+		0 & 1 & 1\\
+		1 & 0 & 0\\
+		1 & 1 & 1
+	\end{array}
+	\]
+	
+	公式为真时对应主析取范式中的小项：
+	\[
+	(\neg P\land \neg Q),\quad(\neg P\land Q),\quad(P\land Q)
+	\]
+	
+	公式为假时对应主合取范式中的大项。只有当
+	\[
+	P=1,\quad Q=0
+	\]
+	时公式为假，因此对应的大项为
+	\[
+	\neg P\lor Q
+	\]
+	
+	所以最终结果为：
+	\[
+	\boxed{\text{主析取范式 }=(\neg P\land \neg Q)\lor(\neg P\land Q)\lor(P\land Q)}
+	\]
+	\[
+	\boxed{\text{主合取范式 }=\neg P\lor Q}
+	\]
+	
+\end{question}
+
+\begin{question}{例题5}
+	用等值演算求\(P \to \bigl((P \to Q)\land \neg(\neg Q \lor \neg P)\bigr)\)的主合取范式和主析取范式。
+	
+	解：
+	\begin{align*}
+		P \to \bigl((P \to Q)\land \neg(\neg Q \lor \neg P)\bigr)
+		&\Leftrightarrow \neg P \lor \bigl((P \to Q)\land \neg(\neg Q \lor \neg P)\bigr) \\
+		&\Leftrightarrow \neg P \lor \bigl((\neg P \lor Q)\land \neg(\neg Q \lor \neg P)\bigr) \\
+		&\Leftrightarrow \neg P \lor \bigl((\neg P \lor Q)\land (Q \land P)\bigr) \\
+		&\Leftrightarrow \neg P \lor \bigl((\neg P \lor Q)\land Q \land P\bigr) \\
+		&\Leftrightarrow \bigl(\neg P \lor (\neg P \lor Q)\bigr)
+		\land (\neg P \lor Q)
+		\land (\neg P \lor P) \\
+		&\Leftrightarrow (\neg P \lor Q)\land(\neg P \lor Q)\land 1 \\
+		&\Leftrightarrow \neg P \lor Q
+	\end{align*}
+	
+	因此，
+	\[
+	P \to \bigl((P \to Q)\land \neg(\neg Q \lor \neg P)\bigr)
+	\Leftrightarrow \neg P \lor Q
+	\]
+	
+	因为 \(\neg P \lor Q\) 中已经含有全部命题变元 \(P,Q\)，且每个命题变元只出现一次，所以它本身就是主合取范式。
+	
+	所以主合取范式为
+	\[
+	\boxed{\neg P \lor Q}
+	\]
+	
+	下面求主析取范式。将
+	\[
+	\neg P \lor Q
+	\]
+	展开为含有全部命题变元的简单合取式：
+	\begin{align*}
+		\neg P \lor Q
+		&\Leftrightarrow \bigl(\neg P \land (Q \lor \neg Q)\bigr)
+		\lor \bigl(Q \land (P \lor \neg P)\bigr) \\
+		&\Leftrightarrow (\neg P \land Q)\lor(\neg P \land \neg Q)
+		\lor(P \land Q)\lor(\neg P \land Q) \\
+		&\Leftrightarrow (\neg P \land \neg Q)\lor(\neg P \land Q)\lor(P \land Q)
+	\end{align*}
+	
+	所以主析取范式为
+	\[
+	\boxed{(\neg P \land \neg Q)\lor(\neg P \land Q)\lor(P \land Q)}
+	\]
+	
+	综上，
+	\[
+	\boxed{\text{主合取范式为 }\neg P \lor Q}
+	\]
+	\[
+	\boxed{\text{主析取范式为 }(\neg P \land \neg Q)\lor(\neg P \land Q)\lor(P \land Q)}
+	\]
+	
+	解释：本题主要使用了以下等值式：
+	\[
+	A\to B \Leftrightarrow \neg A\lor B
+	\]
+	\[
+	\neg(A\lor B)\Leftrightarrow \neg A\land \neg B
+	\]
+	\[
+	A\lor(B\land C)\Leftrightarrow (A\lor B)\land(A\lor C)
+	\]
+	以及排中律：
+	\[
+	P\lor \neg P \Leftrightarrow 1
+	\]
+\end{question}
+
+\subsubsection{联结词的完备集}
+\begin{enumerate}
+	
+	\item[\textbf{def：}] \(S\) 是一个联结词集合，若任一个命题公式都可以由 \(S\) 中的联结词表示出来且命题公式与之等价，则称 \(S\) 是一个联结词完备集。
+	
+	\item[\textbf{Th：}] 以下联结词集都是联结词完备集。
+	
+	\begin{enumerate}
+		\item \(S_1=\{\neg,\land,\lor\}\)
+		\item \(S_2=\{\neg,\land,\lor,\to\}\)
+		\item \(S_3=\{\neg,\land,\lor,\to,\leftrightarrow\}\)
+		\item \(S_4=\{\neg,\land\}\)
+		\item \(S_5=\{\neg,\lor\}\)
+		\item \(S_6=\{\neg,\to\}\)
+		\item \(S_7=\{\uparrow\}\) (表示：与非)
+		\item \(S_8=\{\downarrow\}\) (表示：或非)
+	\end{enumerate}
+	
+\end{enumerate}
+
+\begin{question}{例题6}
+	将 \(P \to Q\) 分别化成 \(S_1=\{\neg,\land\}\)，\(S_2=\{\neg,\lor\}\)，\(S_3=\{\uparrow\}\)，\(S_4=\{\downarrow\}\) 上的公式。
+	
+	
+	\textbf{解答：}
+	
+	首先有基本等值式：
+	\[
+	P\to Q \Leftrightarrow \neg P\lor Q
+	\]
+	
+	\[
+	A\uparrow B \Leftrightarrow \neg(A\land B)
+	\]
+	\[
+	A\downarrow B \Leftrightarrow \neg(A\lor B)
+	\]
+	
+	\begin{enumerate}
+		\item 化成 \(S_1=\{\neg,\land\}\) 上的公式
+		
+		因为
+		\[
+		\neg P\lor Q \Leftrightarrow \neg(P\land \neg Q)
+		\]
+		所以
+		\[
+		\boxed{P\to Q \Leftrightarrow \neg(P\land \neg Q)}
+		\]
+		
+		该公式中只含有联结词 \(\neg,\land\)，因此是 \(S_1=\{\neg,\land\}\) 上的公式。
+		
+		\item 化成 \(S_2=\{\neg,\lor\}\) 上的公式
+		
+		由蕴含等值式可得：
+		\[
+		P\to Q \Leftrightarrow \neg P\lor Q
+		\]
+		
+		所以
+		\[
+		\boxed{P\to Q \Leftrightarrow \neg P\lor Q}
+		\]
+		
+		该公式中只含有联结词 \(\neg,\lor\)，因此是 \(S_2=\{\neg,\lor\}\) 上的公式。
+		
+		\item 化成 \(S_3=\{\uparrow\}\) 上的公式
+		
+		因为
+		\[
+		A\uparrow B \Leftrightarrow \neg(A\land B)
+		\]
+		所以
+		\[
+		\neg Q \Leftrightarrow Q\uparrow Q
+		\]
+		
+		又因为
+		\[
+		P\to Q \Leftrightarrow \neg(P\land \neg Q)
+		\]
+		于是
+		\begin{align*}
+			P\to Q
+			&\Leftrightarrow \neg(P\land \neg Q) \\
+			&\Leftrightarrow P\uparrow \neg Q \\
+			&\Leftrightarrow P\uparrow (Q\uparrow Q)
+		\end{align*}
+		
+		所以
+		\[
+		\boxed{P\to Q \Leftrightarrow P\uparrow (Q\uparrow Q)}
+		\]
+		
+		该公式中只含有联结词 \(\uparrow\)，因此是 \(S_3=\{\uparrow\}\) 上的公式。
+		
+		\item 化成 \(S_4=\{\downarrow\}\) 上的公式
+		
+		因为
+		\[
+		A\downarrow B \Leftrightarrow \neg(A\lor B)
+		\]
+		所以
+		\[
+		\neg A \Leftrightarrow A\downarrow A
+		\]
+		并且
+		\[
+		A\lor B \Leftrightarrow (A\downarrow B)\downarrow(A\downarrow B)
+		\]
+		
+		由
+		\[
+		P\to Q \Leftrightarrow \neg P\lor Q
+		\]
+		可得
+		\begin{align*}
+			P\to Q
+			&\Leftrightarrow \neg P\lor Q \\
+			&\Leftrightarrow (P\downarrow P)\lor Q \\
+			&\Leftrightarrow \bigl((P\downarrow P)\downarrow Q\bigr)
+			\downarrow
+			\bigl((P\downarrow P)\downarrow Q\bigr)
+		\end{align*}
+		
+		所以
+		\[
+		\boxed{
+			P\to Q \Leftrightarrow 
+			\bigl((P\downarrow P)\downarrow Q\bigr)
+			\downarrow
+			\bigl((P\downarrow P)\downarrow Q\bigr)
+		}
+		\]
+		
+		该公式中只含有联结词 \(\downarrow\)，因此是 \(S_4=\{\downarrow\}\) 上的公式。
+	\end{enumerate}
+	
+	综上：
+	\[
+	\boxed{
+		S_1:\quad P\to Q \Leftrightarrow \neg(P\land \neg Q)
+	}
+	\]
+	\[
+	\boxed{
+		S_2:\quad P\to Q \Leftrightarrow \neg P\lor Q
+	}
+	\]
+	\[
+	\boxed{
+		S_3:\quad P\to Q \Leftrightarrow P\uparrow(Q\uparrow Q)
+	}
+	\]
+	\[
+	\boxed{
+		S_4:\quad P\to Q \Leftrightarrow 
+		\bigl((P\downarrow P)\downarrow Q\bigr)
+		\downarrow
+		\bigl((P\downarrow P)\downarrow Q\bigr)
+	}
+	\]
+	
+	
+\end{question}

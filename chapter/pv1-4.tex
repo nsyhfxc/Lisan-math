@@ -1,0 +1,238 @@
+\subsection{谓词逻辑}
+
+\subsubsection{基本定义}
+
+\begin{enumerate}
+
+\item \textbf{个体词}：可独立存在的客体。
+\item \textbf{谓词}：用来说明个体的性质或个体间关系。
+\item \textbf{个体域}：个体变动的取值范围。
+\item \textbf{量词}：表示个体之间数量关系的词。
+\begin{enumerate}
+	\item \textbf{全称量词}：符号“\(\forall\)”。\(\forall x\) 表示个体域中“所有的 \(x\)”、“每一个 \(x\)”、“一切 \(x\)”等。
+	
+	\item \textbf{存在量词}：符号“\(\exists\)”。\(\exists x\) 表示个体域中“存在这样的 \(x\)”、“某个 \(x\)”、“至少有一个 \(x\)”、“有一些 \(x\)”等。
+\end{enumerate}
+
+\item \textbf{量词的辖域}：量词$\forall x$或$\exists x$所作用、支配的公式范围称为量词的辖域。
+
+\item \textbf{约束出现}：变元在某个以它为指导变元的量词辖域内出现，称为约束出现。
+\item \textbf{约束变元}：在公式中有约束出现的变元称为约束变元。
+\item \textbf{自由出现}：变元不在任何同名量词的辖域内出现，称为自由出现。
+\item \textbf{自由变元}：在公式中有自由出现的变元称为自由变元。
+
+
+\end{enumerate}
+
+
+\subsubsection{谓词逻辑举例}
+
+\begin{enumerate}
+
+\item 如：刘畅是个大学生。
+
+记作：\(p\)：刘畅是个大学生。
+
+其中：
+\begin{enumerate}
+	\item 个体词：刘畅
+	\item 谓词：\(\cdots\) 是个大学生
+\end{enumerate}
+
+\item 如：\(5>3\)。
+
+记作：\(q\)：\(5>3\)。
+
+其中：
+\begin{enumerate}
+	\item 个体词：\(5,3\)
+	\item 谓词：\(\cdots\) 大于 \(\cdots\)
+\end{enumerate}
+
+\end{enumerate}
+
+
+\begin{question}{例题1}
+
+写出下列命题的谓词表达式。(题目见上一节内容)
+
+\begin{enumerate}
+	\item 设 \(A(x)\)：\(x\) 是个大学生，且 \(a\)：刘畅。\\
+	则命题符号化为：\(A(a)\)。
+	
+	\item 设 \(H(x,y)\)：\(x\) 大于 \(y\)，且 \(a:5,\ b:3\)。\\
+	则命题符号化为：\(H(a,b)\)。
+\end{enumerate}
+
+\textbf{补充说明}
+\begin{enumerate}
+	\item \(A(x)\)：一元谓词
+	\item \(H(x,y)\)：二元谓词
+	\item 一般地，\(n\) 元谓词可记为 \(P(x_1,x_2,\dots,x_n)\)
+\end{enumerate}
+
+
+
+\end{question}
+
+
+\begin{question}{例题2}
+
+用谓词逻辑将下列命题符号化
+
+\begin{enumerate}
+	\item 所有的偶数均能被 \(2\) 整除。
+	\item 有一些人登上过月球。
+	\item 每列火车都比某些汽车快。
+	\item 没有不犯错的人。
+	\item 尽管有人聪明，但未必所有人都聪明。
+\end{enumerate}
+
+\end{question}
+
+\subsubsection{熟记等价式}
+\begin{enumerate}
+	\item 命题逻辑中的等价式的代换实例是谓词逻辑中的等价式。
+	
+	\begin{align*}
+		A \to B &\Leftrightarrow \neg A \lor B,\\
+		\neg (A \land B) &\Leftrightarrow \neg A \lor \neg B.
+	\end{align*}
+	
+	对应到谓词逻辑可写为：
+	\begin{align*}
+		P(x)\to Q(x) &\Leftrightarrow \neg P(x)\lor Q(x),\\
+		\neg\bigl(\exists x\,P(x)\land \forall x\,Q(x)\bigr) 
+		&\Leftrightarrow \neg\exists x\,P(x)\lor \neg\forall x\,Q(x).
+	\end{align*}
+	
+	\item 量词否定转换。
+	
+	\begin{align*}
+		\neg \forall x\,P(x) &\Leftrightarrow \exists x\,\neg P(x),\\
+		\neg \exists x\,P(x) &\Leftrightarrow \forall x\,\neg P(x).
+	\end{align*}
+	
+	\item 量词辖域的扩张和收缩（略）。
+	
+	\begin{align*}
+		\forall x\,(A(x)\land B)\Leftrightarrow \forall x\,A(x)\land B.
+	\end{align*}
+	
+	\item 量词分配律。
+	
+	\begin{align*}
+		\forall x\,(A(x)\land B(x))
+		&\Leftrightarrow
+		\forall x\,A(x)\land \forall x\,B(x),\\
+		\exists x\,(A(x)\lor B(x))
+		&\Leftrightarrow
+		\exists x\,A(x)\lor \exists x\,B(x).
+	\end{align*}
+	
+\end{enumerate}
+
+
+\begin{question}{例题3}
+
+设个体域 \(D=\{a,b,c\}\)，消去公式中的量词。
+
+在有限个体域 \(D=\{a,b,c\}\) 中，有：
+\[
+\exists x A(x)\Leftrightarrow A(a)\lor A(b)\lor A(c)
+\]
+\[
+\forall x A(x)\Leftrightarrow A(a)\land A(b)\land A(c)
+\]
+
+\begin{enumerate}
+	\item \(\exists x F(x)\rightarrow \forall y G(y)\)
+	
+	解：
+	\begin{align*}
+		\exists x F(x)\rightarrow \forall y G(y)
+		&\Leftrightarrow \bigl(F(a)\lor F(b)\lor F(c)\bigr)
+		\rightarrow \bigl(G(a)\land G(b)\land G(c)\bigr)
+	\end{align*}
+	
+	所以消去量词后为：
+	\[
+	\boxed{
+		\bigl(F(a)\lor F(b)\lor F(c)\bigr)
+		\rightarrow
+		\bigl(G(a)\land G(b)\land G(c)\bigr)
+	}
+	\]
+	
+	如果继续消去蕴含联结词，则有：
+	\begin{align*}
+		\bigl(F(a)\lor F(b)\lor F(c)\bigr)
+		\rightarrow 
+		\bigl(G(a)\land G(b)\land G(c)\bigr) 
+		&\Leftrightarrow \\
+		\neg\bigl(F(a)\lor F(b)\lor F(c)\bigr)
+		\lor
+		\bigl(G(a)\land G(b)\land G(c)\bigr)
+	\end{align*}
+	
+	\item \(\forall x \forall y \bigl(F(x)\rightarrow G(y)\bigr)\)
+	
+	解：
+	\begin{align*}
+		\forall x \forall y \bigl(F(x)\rightarrow G(y)\bigr)
+		&\Leftrightarrow
+		\forall y \bigl(F(a)\rightarrow G(y)\bigr)
+		\land
+		\forall y \bigl(F(b)\rightarrow G(y)\bigr)
+		\land
+		\forall y \bigl(F(c)\rightarrow G(y)\bigr) \\
+		&\Leftrightarrow
+		\bigl(F(a)\rightarrow G(a)\bigr)
+		\land
+		\bigl(F(a)\rightarrow G(b)\bigr)
+		\land
+		\bigl(F(a)\rightarrow G(c)\bigr) \\
+		&\quad \land
+		\bigl(F(b)\rightarrow G(a)\bigr)
+		\land
+		\bigl(F(b)\rightarrow G(b)\bigr)
+		\land
+		\bigl(F(b)\rightarrow G(c)\bigr) \\
+		&\quad \land
+		\bigl(F(c)\rightarrow G(a)\bigr)
+		\land
+		\bigl(F(c)\rightarrow G(b)\bigr)
+		\land
+		\bigl(F(c)\rightarrow G(c)\bigr)
+	\end{align*}
+	
+	所以消去量词后为：
+	\[
+	\boxed{
+		\begin{aligned}
+			&\bigl(F(a)\rightarrow G(a)\bigr)
+			\land
+			\bigl(F(a)\rightarrow G(b)\bigr)
+			\land
+			\bigl(F(a)\rightarrow G(c)\bigr) \\
+			&\land
+			\bigl(F(b)\rightarrow G(a)\bigr)
+			\land
+			\bigl(F(b)\rightarrow G(b)\bigr)
+			\land
+			\bigl(F(b)\rightarrow G(c)\bigr) \\
+			&\land
+			\bigl(F(c)\rightarrow G(a)\bigr)
+			\land
+			\bigl(F(c)\rightarrow G(b)\bigr)
+			\land
+			\bigl(F(c)\rightarrow G(c)\bigr)
+		\end{aligned}
+	}
+	\]
+	
+	解释：因为 \(\forall x\forall y\) 表示对 \(D=\{a,b,c\}\) 中所有有序对 \((x,y)\) 都成立，所以需要列出全部 \(3\times 3=9\) 种情况。
+\end{enumerate}
+
+\end{question}
+

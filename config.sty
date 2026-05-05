@@ -76,11 +76,18 @@
 
 \usepackage{listings}    % 导入 listings 宏包
 
+  % 引入定制颜色的xcolor
+\definecolor{LightBlue}{RGB}{226, 247, 254}         % 自定义颜色LightBlue
+\usepackage{tcolorbox}                              % 引入tcolorbox宏包
+\tcbuselibrary{breakable, most, skins, theorems}    % 调用tcolorbox的库
+\newtcolorbox{question}[2][breakable] {             % 定义解答和问题的样式
+	colback = white,
+	colframe = cyan, 
+	fonttitle = \bfseries,  
+	title = #2, #1
+}
+\newenvironment{solution}{\noindent{\textbf{{\color{cyan}解答}}}\quad}
 
-
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
 
 \lstset{
 	frame=tb,

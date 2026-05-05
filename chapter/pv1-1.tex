@@ -1,0 +1,309 @@
+\subsection{命题逻辑的基本概念}
+
+\subsubsection{基本定义}
+
+\begin{enumerate}
+	\item \textbf{命题：}能判断其真假的陈述句。
+	
+	\item \textbf{命题的真值}：真、假；
+	
+	\item \textbf{命题分类}：真命题、假命题；简单命题（原子命题）、复合命题。
+	
+\end{enumerate}
+
+\begin{question}{例题1}
+	
+	判断下列语句是否为命题，如果是命题，真值如何？
+	\begin{enumerate}
+		\item 北京是中国的首都。(是命题，真。因为这是一个陈述句，并且事实成立。)
+		\item 圆周率$\pi$是一个无理数。(是命题，真。因为$\pi$不能表示为两个整数之比。)
+		\item 小张是个大学生。(是命题，真值无法由题设确定。因为如果“小张”指某个确定的人，则该语句必然为真或为假，但题目未给出相关信息。)
+		\item 地球外的星球上有人。(是命题，真值目前无法确定。因为它是一个陈述句，客观上有真或假，但目前无法判断其真值。)
+		\item 2200年的元旦是晴天。(是命题，真值目前无法确定。因为这是一个关于未来天气的陈述句，客观上有真或假，但现在无法判断。)
+		\item 请关门！(不是命题。因为这是祈使句，不是陈述句，没有真值。)
+		\item $2x + 4 \ge 10$(不是命题。因为含有未确定的变量$x$，其真假随$x$的取值而变化，没有确定真值。)
+		\item 我正在说假话。(不是命题。因为这是一个自指悖论，若判定其为真则推出其为假，若判定其为假又推出其为真，不能确定真值。)
+	\end{enumerate}
+	
+\end{question}
+
+
+
+
+\subsubsection{命题联结词}
+
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		联结词 & 非 & 并且 & 或 & 如果$\cdots$则$\cdots$ & 当且仅当 \\
+		\hline
+		符号化 & $\neg$ & $\land$ & $\lor$ & $\to$ & $\leftrightarrow$ \\
+		\hline
+	\end{tabular}
+\end{center}
+\subsubsection{常见真值表}
+
+\begin{enumerate}
+	
+	\item \textbf{否定 $\neg p$}
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline
+			$p$ & $\neg p$ \\
+			\hline
+			0 & 1 \\
+			1 & 0 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\item \textbf{合取 $p\land q$}
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			$p$ & $q$ & $p\land q$ \\
+			\hline
+			0 & 0 & 0 \\
+			0 & 1 & 0 \\
+			1 & 0 & 0 \\
+			1 & 1 & 1 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\item \textbf{析取 $p\lor q$}
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			$p$ & $q$ & $p\lor q$ \\
+			\hline
+			0 & 0 & 0 \\
+			0 & 1 & 1 \\
+			1 & 0 & 1 \\
+			1 & 1 & 1 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	
+	\item \textbf{蕴含 $p\to q$}
+	
+	\textbf{其中，$p$称为\textbf{前件（条件）}，$q$称为\textbf{后件（结论）}。蕴含命题仅在$p=1,q=0$时为假。}
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			$p$ & $q$ & $p\to q$ \\
+			\hline
+			0 & 0 & 1 \\
+			0 & 1 & 1 \\
+			1 & 0 & 0 \\
+			1 & 1 & 1 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	
+	
+	\item \textbf{等价 $p\leftrightarrow q$}
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			$p$ & $q$ & $p\leftrightarrow q$ \\
+			\hline
+			0 & 0 & 1 \\
+			0 & 1 & 0 \\
+			1 & 0 & 0 \\
+			1 & 1 & 1 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	
+\end{enumerate}
+
+\subsubsection{运算优先级}
+\begin{align*}
+	\neg \;>\; \land \;>\; \lor \;>\; \to \;>\; \leftrightarrow
+\end{align*}
+
+示例：
+
+\begin{align*}
+	\neg p \to q \lor r \;\Leftrightarrow\; (\neg p)\to(q\lor r)
+\end{align*}
+
+\begin{question}{例题2}
+	将下列命题符号化
+	\begin{enumerate}
+		\item $\sqrt{2}$是无理数。
+		
+		设 $p$ 表示“$\sqrt{2}$是无理数”，则符号化为$p$.
+		
+		解释：这是一个简单命题，不能再用命题联结词分解，所以直接用一个命题变元表示。
+		
+		\item $\sqrt{2}$和$\sqrt{5}$都是无理数。
+		
+		设 $p$ 表示“$\sqrt{2}$是无理数”，$q$ 表示“$\sqrt{5}$是无理数”，则符号化为$p\land q$.
+		
+		解释：“都是”表示两个命题同时成立，对应合取联结词 $\land$。
+		
+		\item $\sqrt{2}$和$\sqrt{5}$的乘积是无理数。
+		
+		设 $r$ 表示“$\sqrt{2}$和$\sqrt{5}$的乘积是无理数”，则符号化为$r$.
+		
+		解释：该命题的主干是“乘积是无理数”，不是“$\sqrt{2}$是无理数并且$\sqrt{5}$是无理数”，所以应看作一个简单命题。
+		
+		\item 小丽喜欢唱歌或者喜欢跳舞。
+		
+		设 $p$ 表示“小丽喜欢唱歌”，$q$ 表示“小丽喜欢跳舞”，则符号化为$p\lor q$.
+		
+		解释：“或者”在命题逻辑中通常表示相容析取，即至少有一个命题成立，对应 $\lor$。
+		
+		\item 今天晚上小丽看书或者打球。
+		
+		设 $p$ 表示“今天晚上小丽看书”，$q$ 表示“今天晚上小丽打球”，则符号化为$p\lor q$.
+		
+		解释：“看书或者打球”表示两个行为中至少发生一个，对应析取联结词 $\lor$。
+		
+		\item 如果天气好，我就去公园。
+		
+		设 $p$ 表示“天气好”，$q$ 表示“我去公园”，则符号化为$p\rightarrow q$.
+		
+		解释：“如果 $p$，就 $q$”表示 $p$ 是 $q$ 的充分条件，对应蕴含式 $p\rightarrow q$。
+		
+		\item 只要天气好，我就去公园。
+		
+		设 $p$ 表示“天气好”，$q$ 表示“我去公园”，则符号化为$p\rightarrow q$.
+		
+		解释：“只要 $p$，就 $q$”表示只要 $p$ 成立，$q$ 就成立，因此对应 $p\rightarrow q$。
+		
+		\item 只有天气好，我才会去公园。
+		
+		设 $p$ 表示“天气好”，$q$ 表示“我去公园”，则符号化为$q\rightarrow p$.
+		
+		解释：“只有 $p$，才 $q$”表示 $p$ 是 $q$ 的必要条件，即若 $q$ 成立，则 $p$ 必成立，所以为 $q\rightarrow p$。
+		
+		\item 经一事，长一智，并且不经一事，不长一智。
+		
+		设 $p$ 表示“经一事”，$q$ 表示“长一智”，则符号化为$(p\rightarrow q)\land(\neg p\rightarrow \neg q)$.
+		
+		解释：“经一事，长一智”表示 $p\rightarrow q$；“不经一事，不长一智”表示 $\neg p\rightarrow \neg q$；中间的“并且”对应合取联结词 $\land$。因此也可等价地写成$p\leftrightarrow q$.
+		
+	\end{enumerate}
+\end{question}
+
+\subsubsection{命题类型判定标准}
+\begin{enumerate}
+	\item \textbf{重言式}：公式赋值恒为 $1$（永真式）。
+	\item \textbf{矛盾式}：公式赋值恒为 $0$（永假式）。
+	\item \textbf{可满足式}：不是矛盾式。
+\end{enumerate}
+
+
+
+\begin{question}{例题3}
+	判断公式类型
+	
+	\begin{enumerate}
+		\item 
+		\begin{align*}
+			(p \land r) \land \neg(q \to p)
+		\end{align*}
+		
+		\textbf{采用真值表法求解}
+		\begin{center}
+			\begin{tabular}{ccccccc}
+				\toprule
+				$p$ & $q$ & $r$ & $p \land r$ & $q \to p$ & $\neg(q \to p)$ & $(p \land r)\land\neg(q \to p)$ \\
+				\midrule
+				0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+				0 & 0 & 1 & 0 & 1 & 0 & 0 \\
+				0 & 1 & 0 & 0 & 0 & 1 & 0 \\
+				0 & 1 & 1 & 0 & 0 & 1 & 0 \\
+				1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+				1 & 0 & 1 & 1 & 1 & 0 & 0 \\
+				1 & 1 & 0 & 0 & 1 & 0 & 0 \\
+				1 & 1 & 1 & 1 & 1 & 0 & 0 \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		
+		\textbf{可见，公式为矛盾式。}
+		
+		
+		\item 
+		\begin{align*}
+			(p \to q) \to (\neg q \to \neg p)
+		\end{align*}
+		
+		\textbf{采用真值表法求解}
+		\begin{center}
+			\begin{tabular}{ccccccc}
+				\toprule
+				$p$ & $q$ & $p\to q$ & $\neg q$ & $\neg p$ & $\neg q\to \neg p$ & $(p\to q)\to(\neg q\to\neg p)$ \\
+				\midrule
+				0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+				0 & 1 & 1 & 0 & 1 & 1 & 1 \\
+				1 & 0 & 0 & 1 & 0 & 0 & 1 \\
+				1 & 1 & 1 & 0 & 0 & 1 & 1 \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		
+		\textbf{由真值表可知，该公式最后一列全为 $1$，因此该公式为永真式。}
+		
+		
+		\item 
+		\begin{align*}
+			(\neg p \land Q) \to \neg R
+		\end{align*}
+		
+		\textbf{采用真值表法求解}
+		\begin{center}
+			\begin{tabular}{ccccccc}
+				\toprule
+				$p$ & $Q$ & $R$ & $\neg p$ & $\neg R$ & $\neg p\land Q$ & $(\neg p\land Q)\to\neg R$ \\
+				\midrule
+				0 & 0 & 0 & 1 & 1 & 0 & 1 \\
+				0 & 0 & 1 & 1 & 0 & 0 & 1 \\
+				0 & 1 & 0 & 1 & 1 & 1 & 1 \\
+				0 & 1 & 1 & 1 & 0 & 1 & 0 \\
+				1 & 0 & 0 & 0 & 1 & 0 & 1 \\
+				1 & 0 & 1 & 0 & 0 & 0 & 1 \\
+				1 & 1 & 0 & 0 & 1 & 0 & 1 \\
+				1 & 1 & 1 & 0 & 0 & 0 & 1 \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		
+		\textbf{由真值表可知，该公式最后一列既有 $1$ 又有 $0$，因此该公式为偶真式，即可满足但非永真式。}
+		
+		
+	\end{enumerate}
+\end{question}
+
+\begin{question}{例题4}
+	
+	求公式$(\neg p \land Q) \to \neg R$的成真赋值和成假赋值。
+	
+	\textbf{采用真值表法求解}
+	\begin{center}
+		\begin{tabular}{ccccccc}
+			\toprule
+			$p$ & $Q$ & $R$ & $\neg p$ & $\neg R$ & $\neg p\land Q$ & $(\neg p\land Q)\to\neg R$ \\
+			\midrule
+			0 & 0 & 0 & 1 & 1 & 0 & 1 \\
+			0 & 0 & 1 & 1 & 0 & 0 & 1 \\
+			0 & 1 & 0 & 1 & 1 & 1 & 1 \\
+			0 & 1 & 1 & 1 & 0 & 1 & 0 \\
+			1 & 0 & 0 & 0 & 1 & 0 & 1 \\
+			1 & 0 & 1 & 0 & 0 & 0 & 1 \\
+			1 & 1 & 0 & 0 & 1 & 0 & 1 \\
+			1 & 1 & 1 & 0 & 0 & 0 & 1 \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	
+	\textbf{由真值表可知，该公式的成假赋值为011，其余均为成真赋值。}
+	
+\end{question}
